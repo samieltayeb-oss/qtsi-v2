@@ -21,7 +21,14 @@
   <meta property="og:url" content="https://www.qtsi.ca/executive-advisory" />
   <meta property="og:image" content="https://www.qtsi.ca/qtsi-logo.webp" />
   <meta name="twitter:card" content="summary_large_image" />
-
+  <style>
+    @media (max-width: 1024px) {
+      .workflow-arrow {
+        transform: rotate(90deg);
+        margin: var(--sp-2) 0;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -118,12 +125,59 @@
     </div>
   </section>
 
+  <!-- 3.5 Security Assurance Services -->
+  <section class="exec-section" style="border-top: 1px solid var(--border-light);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: var(--sp-12);">
+        <span class="exec-badge exec-badge--secondary" style="margin-bottom: var(--sp-4);">Security Assurance Services</span>
+        <h2 class="display-md">Capability Assurance & Governance</h2>
+        <p class="text-body-lg" style="max-width: 800px; margin: var(--sp-4) auto 0; color: var(--text-secondary);">
+          We act as the executive advisory partner that scopes, governs, coordinates, quality-assures, and interprets security assessments—using qualified internal resources or trusted specialists where appropriate to ensure your defensibility.
+        </p>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--sp-8);">
+        
+        <div class="exec-card" style="padding: var(--sp-6); background: var(--bg-secondary); border: 1px solid var(--border-light);">
+          <h3 style="font-size: 1.25rem; margin-bottom: var(--sp-2); color: var(--accent-primary);">Vendor Security Assessments</h3>
+          <p class="text-body-sm" style="color: var(--text-secondary);">Evaluate third-party supply chain risk, assess partner security postures, and defend your organization against external vendor liabilities.</p>
+        </div>
+        
+        <div class="exec-card" style="padding: var(--sp-6); background: var(--bg-secondary); border: 1px solid var(--border-light);">
+          <h3 style="font-size: 1.25rem; margin-bottom: var(--sp-2); color: var(--accent-primary);">Penetration Testing Coordination</h3>
+          <p class="text-body-sm" style="color: var(--text-secondary);">Scope, govern, and quality-assure external penetration testing engagements to ensure they target critical business risks rather than generic templates.</p>
+        </div>
+        
+        <div class="exec-card" style="padding: var(--sp-6); background: var(--bg-secondary); border: 1px solid var(--border-light);">
+          <h3 style="font-size: 1.25rem; margin-bottom: var(--sp-2); color: var(--accent-primary);">Application Security Assessments</h3>
+          <p class="text-body-sm" style="color: var(--text-secondary);">Oversee software and product security reviews aligned with the industry-standard OWASP Application Security Verification Standard (ASVS).</p>
+        </div>
+        
+        <div class="exec-card" style="padding: var(--sp-6); background: var(--bg-secondary); border: 1px solid var(--border-light);">
+          <h3 style="font-size: 1.25rem; margin-bottom: var(--sp-2); color: var(--accent-primary);">Mobile Security Assessments</h3>
+          <p class="text-body-sm" style="color: var(--text-secondary);">Govern mobile application reviews against the OWASP Mobile Application Security Verification Standard (MASVS) for robust client-side protection.</p>
+        </div>
+        
+        <div class="exec-card" style="padding: var(--sp-6); background: var(--bg-secondary); border: 1px solid var(--border-light);">
+          <h3 style="font-size: 1.25rem; margin-bottom: var(--sp-2); color: var(--accent-primary);">Executive Assessment Reporting</h3>
+          <p class="text-body-sm" style="color: var(--text-secondary);">Translate complex, raw vulnerability data into clear, board-ready risk summaries and high-level findings workshops.</p>
+        </div>
+        
+        <div class="exec-card" style="padding: var(--sp-6); background: var(--bg-secondary); border: 1px solid var(--border-light);">
+          <h3 style="font-size: 1.25rem; margin-bottom: var(--sp-2); color: var(--accent-primary);">Executive Findings Workshops</h3>
+          <p class="text-body-sm" style="color: var(--text-secondary);">Collaborate directly with your leadership team to walk through findings, prioritize remediation efforts, and align on next steps.</p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
   <!-- 4. The Retainer (The Core Offering) -->
-  <section class="exec-section">
+  <section class="exec-section exec-section--alt">
     <div class="container flex flex-col items-center">
       <h2 class="display-md fade-up" style="margin-bottom: var(--sp-12); text-align: center;">The vCISO Retainer</h2>
       
-      <div class="exec-card fade-up delay-100" style="max-width: 800px; width: 100%; padding: var(--sp-12); text-align: center;">
+      <div class="exec-card fade-up delay-100" style="max-width: 800px; width: 100%; padding: var(--sp-12); text-align: center; background: white;">
         <!-- Source: QTSI_Digital_Workforce_Accelerator_Blueprint.html (vCISO Retainer Pricing/Model) -->
         <h3 class="display-sm" style="margin-bottom: var(--sp-2);">Fractional Executive Security Leadership</h3>
         <p class="text-body" style="margin-bottom: var(--sp-8);">For organizations that require a C-level security officer but do not have the internal headcount. We integrate directly into your executive team on a continuous, retainer basis.</p>
@@ -135,6 +189,87 @@
         </div>
         
         <a href="https://calendly.com/qtsi-info/30min" data-action="booking" class="exec-button exec-button--primary">Request Retainer Briefing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4.5 Security Assurance Workflow -->
+  <section class="exec-section">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: var(--sp-12);">
+        <span class="exec-badge exec-badge--primary" style="margin-bottom: var(--sp-4);">Governance Framework</span>
+        <h2 class="display-md">Security Assurance Workflow</h2>
+        <p class="text-body-lg" style="max-width: 800px; margin: var(--sp-4) auto 0; color: var(--text-secondary);">
+          Our structured methodology for scoping, executing, quality-assuring, and governing security assurance assessments.
+        </p>
+      </div>
+      
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; gap: var(--sp-4); margin-top: var(--sp-8);">
+        
+        <!-- Step 1 -->
+        <div class="exec-card" style="flex: 1; min-width: 150px; max-width: 180px; padding: var(--sp-6); text-align: center; display: flex; flex-direction: column; justify-content: space-between; background: white;">
+          <div>
+            <div style="font-size: 0.75rem; font-weight: 800; color: var(--accent-secondary); margin-bottom: var(--sp-2);">01</div>
+            <h4 style="font-size: 1.125rem; margin-bottom: var(--sp-2); color: var(--accent-primary);">Discovery</h4>
+          </div>
+          <p class="text-body-sm" style="color: var(--text-secondary); font-size: 0.8125rem; margin-top: auto;">Define objectives, scope boundaries, and risk appetite.</p>
+        </div>
+        
+        <div style="display: flex; align-items: center; justify-content: center; color: var(--border-medium); font-size: 1.5rem;" class="workflow-arrow">→</div>
+        
+        <!-- Step 2 -->
+        <div class="exec-card" style="flex: 1; min-width: 150px; max-width: 180px; padding: var(--sp-6); text-align: center; display: flex; flex-direction: column; justify-content: space-between; background: white;">
+          <div>
+            <div style="font-size: 0.75rem; font-weight: 800; color: var(--accent-secondary); margin-bottom: var(--sp-2);">02</div>
+            <h4 style="font-size: 1.125rem; margin-bottom: var(--sp-2); color: var(--accent-primary);">Vendor Assessment</h4>
+          </div>
+          <p class="text-body-sm" style="color: var(--text-secondary); font-size: 0.8125rem; margin-top: auto;">Analyze third-party supply chain risk vectors.</p>
+        </div>
+        
+        <div style="display: flex; align-items: center; justify-content: center; color: var(--border-medium); font-size: 1.5rem;" class="workflow-arrow">→</div>
+        
+        <!-- Step 3 -->
+        <div class="exec-card" style="flex: 1; min-width: 150px; max-width: 180px; padding: var(--sp-6); text-align: center; display: flex; flex-direction: column; justify-content: space-between; background: white;">
+          <div>
+            <div style="font-size: 0.75rem; font-weight: 800; color: var(--accent-secondary); margin-bottom: var(--sp-2);">03</div>
+            <h4 style="font-size: 1.125rem; margin-bottom: var(--sp-2); color: var(--accent-primary);">Technical Assessment</h4>
+          </div>
+          <p class="text-body-sm" style="color: var(--text-secondary); font-size: 0.8125rem; margin-top: auto;">Execute testing coordination (ASVS/MASVS).</p>
+        </div>
+        
+        <div style="display: flex; align-items: center; justify-content: center; color: var(--border-medium); font-size: 1.5rem;" class="workflow-arrow">→</div>
+        
+        <!-- Step 4 -->
+        <div class="exec-card" style="flex: 1; min-width: 150px; max-width: 180px; padding: var(--sp-6); text-align: center; display: flex; flex-direction: column; justify-content: space-between; background: white;">
+          <div>
+            <div style="font-size: 0.75rem; font-weight: 800; color: var(--accent-secondary); margin-bottom: var(--sp-2);">04</div>
+            <h4 style="font-size: 1.125rem; margin-bottom: var(--sp-2); color: var(--accent-primary);">Executive Report</h4>
+          </div>
+          <p class="text-body-sm" style="color: var(--text-secondary); font-size: 0.8125rem; margin-top: auto;">Translate technical findings into business risks.</p>
+        </div>
+        
+        <div style="display: flex; align-items: center; justify-content: center; color: var(--border-medium); font-size: 1.5rem;" class="workflow-arrow">→</div>
+        
+        <!-- Step 5 -->
+        <div class="exec-card" style="flex: 1; min-width: 150px; max-width: 180px; padding: var(--sp-6); text-align: center; display: flex; flex-direction: column; justify-content: space-between; background: white;">
+          <div>
+            <div style="font-size: 0.75rem; font-weight: 800; color: var(--accent-secondary); margin-bottom: var(--sp-2);">05</div>
+            <h4 style="font-size: 1.125rem; margin-bottom: var(--sp-2); color: var(--accent-primary);">Remediation Roadmap</h4>
+          </div>
+          <p class="text-body-sm" style="color: var(--text-secondary); font-size: 0.8125rem; margin-top: auto;">Develop prioritized 90-day actionable remediation plan.</p>
+        </div>
+        
+        <div style="display: flex; align-items: center; justify-content: center; color: var(--border-medium); font-size: 1.5rem;" class="workflow-arrow">→</div>
+        
+        <!-- Step 6 -->
+        <div class="exec-card" style="flex: 1; min-width: 150px; max-width: 180px; padding: var(--sp-6); text-align: center; display: flex; flex-direction: column; justify-content: space-between; background: white;">
+          <div>
+            <div style="font-size: 0.75rem; font-weight: 800; color: var(--accent-secondary); margin-bottom: var(--sp-2);">06</div>
+            <h4 style="font-size: 1.125rem; margin-bottom: var(--sp-2); color: var(--accent-primary);">Governance Oversight</h4>
+          </div>
+          <p class="text-body-sm" style="color: var(--text-secondary); font-size: 0.8125rem; margin-top: auto;">Deliver continuous executive validation and compliance audits.</p>
+        </div>
+        
       </div>
     </div>
   </section>
