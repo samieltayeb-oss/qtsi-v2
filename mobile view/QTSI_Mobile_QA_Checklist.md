@@ -53,3 +53,40 @@ Execute Lighthouse mobile tests to ensure the following thresholds are maintaine
 - [ ] **SEO Score:** 100
 - [ ] **Content Layout Shift (CLS):** < 0.05
 - [ ] **Interaction to Next Paint (INP):** < 200ms
+
+---
+
+## 6. Above-the-Fold Executive Test
+
+For every page, verify that the initial screen viewport loads clean layouts without scrolling:
+
+- [ ] **Primary Message:** Header/hook is fully readable and clear.
+- [ ] **Call-to-Action:** At least one primary button/CTA is completely visible.
+- [ ] **Identity:** QTSI Logo is loaded, sharp, and properly aligned.
+- [ ] **Navigation:** The mobile navigation menu trigger is fully visible and clickable.
+- [ ] **Zero Clipping:** No hero illustrations or typography clip past viewport boundaries.
+- [ ] **Whitespace Balance:** No oversized blank spacing or empty gaps above the fold.
+
+---
+
+## 7. Thumb-Zone Usability Audit
+
+Verify natural, comfortable one-handed usability across mobile viewports:
+
+- [ ] **Primary Actions:** Main conversion button is positioned comfortably within thumb reach.
+- [ ] **Secondary Actions:** Inline links and minor CTAs do not require stretching.
+- [ ] **Menu Accessibility:** The hamburger trigger is positioned for quick thumb tap.
+- [ ] **Close & Dismissal:** Modal close buttons and drawer close triggers are easily reachable and clickable.
+
+---
+
+## 8. Accessibility Testing Matrix
+
+Verify standard WCAG compliance on physical test devices:
+
+- [ ] **VoiceOver (iOS):** Test site navigation with screen reader. Verify correct reading flow.
+- [ ] **TalkBack (Android):** Test with Android screen reader. Verify elements are described properly.
+- [ ] **Keyboard Navigation:** Use tab buttons to navigate the site. Confirm logic flow.
+- [ ] **Focus Indication:** Ensure focused inputs/links render a clear visual focus boundary.
+- [ ] **Screen-Reader Labels:** Verify that all icons, buttons, and logos have robust text fallbacks (`alt` tags or `aria-label`).
+

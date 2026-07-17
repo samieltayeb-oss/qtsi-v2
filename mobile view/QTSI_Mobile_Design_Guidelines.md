@@ -88,3 +88,16 @@ Headings must scale down dynamically on smaller viewports to prevent awkward lin
   - Business Email → `type="email"`
   - Phone numbers → `type="tel"`
 - **iOS Viewport Locking:** Ensure font sizes on form inputs are **at least 16px** (1rem). iOS Safari will zoom in automatically when focusing inputs with font sizes below 16px, disrupting user layouts.
+
+---
+
+## 6. Mobile Image & Asset Strategy (P0)
+
+To achieve fast loads and high-performance layout stability, all image assets must adhere to the following standards:
+
+- **Format Optimization:** Deliver image assets using `<picture>` structures serving next-generation formats (AVIF first, WebP secondary fallback) with a fallback static standard image.
+- **Responsive Resolutions:** Use `srcset` and `sizes` attributes for responsive assets so mobile viewports only download resolution-matched images (avoiding large desktop resolutions).
+- **Mobile-Specific Hero Crops:** For headers, utilize landscape crops for desktop and square/vertical crops for mobile screens to maximize hero visual impact and space.
+- **Native Lazy Loading:** All images rendering below the fold must include `loading="lazy"`. High-priority hero images above the fold must omit this to maximize LCP.
+- **Explicit Width/Height Bounds:** Set explicit `width` and `height` attributes on every `<img>` tag to allow the browser to compute aspect ratios before image data downloads, completely preventing Content Layout Shifts (CLS).
+
