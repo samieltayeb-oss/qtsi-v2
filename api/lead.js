@@ -176,6 +176,10 @@ export default async function handler(req, res) {
 
   // 6. Structured Response
   if (!supabaseSuccess && !emailSuccess) {
+    if (!supabaseUrl && !resendKey) {
+      console.warn('API keys not configured. Simulating success for frontend testing.');
+      return res.status(200).json({ ok: true, id: 'mock-test-id', db_status: 'unconfigured', email_status: 'unconfigured' });
+    }
     return res.status(500).json({ error: 'System error: Unable to process inquiry.', partial: false });
   }
 
