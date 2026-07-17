@@ -45,7 +45,7 @@
   </nav>
 
   <!-- 1. Hero -->
-  <header class="exec-section hero-bg" style="padding-top: var(--sp-24); padding-bottom: var(--sp-12);">
+  <header class="exec-section hero-bg exec-hero">
     <div class="container flex items-center justify-between" style="gap: var(--sp-12); flex-wrap: wrap;">
       <div style="flex: 1; min-width: 300px;">
         <a href="/academy.html" style="display: inline-block; margin-bottom: var(--sp-6); font-size: 0.875rem; font-weight: 600; color: var(--text-secondary); text-decoration: none;">← Back to Academy Hub</a>
@@ -82,7 +82,7 @@
     <div class="container">
       <h2 class="display-md fade-up" style="margin-bottom: var(--sp-12); text-align: center;">Why Partner with QTSI?</h2>
       
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--sp-8);">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: var(--sp-8);">
         <div class="exec-card fade-up delay-100">
           <h3 class="display-xs" style="color: var(--accent-primary); margin-bottom: var(--sp-4);">Turnkey Delivery</h3>
           <p class="text-body">We handle the cloud platform, the assessments, and the certification. You handle the outreach.</p>
@@ -122,15 +122,15 @@
         <form class="qtsi-embedded-form" style="display: flex; flex-direction: column; gap: var(--sp-4);">
           <div style="display: flex; flex-direction: column; gap: 4px;">
             <label for="name" style="font-size: 0.875rem; font-weight: 600; color: var(--text-primary);">Full Name</label>
-            <input type="text" id="name" name="name" required style="padding: 12px; border: 1px solid var(--border-medium); border-radius: var(--r-md); font-family: inherit;" />
+            <input type="text" id="name" autocomplete="name" name="name" required style="padding: 12px; border: 1px solid var(--border-medium); border-radius: var(--r-md); font-family: inherit;" />
           </div>
           <div style="display: flex; flex-direction: column; gap: 4px;">
             <label for="email" style="font-size: 0.875rem; font-weight: 600; color: var(--text-primary);">Work Email</label>
-            <input type="email" id="email" name="email" required style="padding: 12px; border: 1px solid var(--border-medium); border-radius: var(--r-md); font-family: inherit;" />
+            <input type="email" id="email" autocomplete="email" name="email" required style="padding: 12px; border: 1px solid var(--border-medium); border-radius: var(--r-md); font-family: inherit;" />
           </div>
           <div style="display: flex; flex-direction: column; gap: 4px;">
             <label for="org" style="font-size: 0.875rem; font-weight: 600; color: var(--text-primary);">Organization Name</label>
-            <input type="text" id="org" name="org" required style="padding: 12px; border: 1px solid var(--border-medium); border-radius: var(--r-md); font-family: inherit;" />
+            <input type="text" id="org" autocomplete="organization" name="org" required style="padding: 12px; border: 1px solid var(--border-medium); border-radius: var(--r-md); font-family: inherit;" />
           </div>
           <div style="display: flex; flex-direction: column; gap: 4px;">
             <label for="demographic" style="font-size: 0.875rem; font-weight: 600; color: var(--text-primary);">Target Demographic</label>

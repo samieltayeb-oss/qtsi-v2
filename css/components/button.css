@@ -38,3 +38,11 @@
   outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
 }
+
+@media (max-width: 768px) {
+  .exec-button {
+    padding: calc(var(--sp-3) + 2px) var(--sp-6); /* Guarantees >= 44px height */
+    font-size: 1.0625rem;
+  }
+}
+

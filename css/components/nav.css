@@ -43,8 +43,110 @@
   color: var(--accent-primary);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .exec-nav-links {
-    display: none; /* Mobile menu needed */
+    display: none;
+  }
+
+  .exec-nav-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    z-index: 100;
+    transition: transform var(--transition-fast);
+  }
+
+  /* Hamburger SVG Line Animations */
+  .exec-nav-hamburger svg line {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    transform-origin: center;
+  }
+  
+  .exec-nav-hamburger.is-active .line-mid {
+    opacity: 0;
+  }
+  
+  .exec-nav-hamburger.is-active .line-top {
+    transform: translateY(6px) rotate(45deg);
+  }
+  
+  .exec-nav-hamburger.is-active .line-bot {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  /* Mobile Drawer Container */
+  .exec-nav-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 90;
+    transform: translateX(100%);
+    transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    padding: calc(90px + env(safe-area-inset-top)) var(--sp-6) calc(var(--sp-6) + env(safe-area-inset-bottom));
+    overflow-y: auto;
+  }
+
+  .exec-nav-drawer.is-visible {
+    transform: translateX(0);
+  }
+
+  .exec-nav-drawer-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-6);
+    margin-top: var(--sp-4);
+  }
+
+  .mobile-nav-link {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: var(--sp-2) 0;
+    border-bottom: 1px solid var(--border-light);
+    transition: color var(--transition-fast);
+  }
+
+  .mobile-nav-link:hover,
+  .mobile-nav-link:focus {
+    color: var(--accent-primary);
+  }
+
+  .mobile-nav-btn {
+    width: 100%;
+    margin-top: var(--sp-4);
+    padding: var(--sp-4) var(--sp-6);
+    font-size: 1.125rem;
+    box-sizing: border-box;
   }
 }
+
+@media (min-width: 1025px) {
+  .exec-nav-hamburger {
+    display: none;
+  }
+}
+
+/* Prevent body scrolling when menu or modal is open */
+body.drawer-open,
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+

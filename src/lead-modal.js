@@ -17,17 +17,17 @@ export function initLeadModal() {
           
           <div class="form-group">
             <label for="lead-name">Full Name *</label>
-            <input type="text" id="lead-name" name="name" required />
+            <input type="text" id="lead-name" name="name" autocomplete="name" required />
           </div>
           
           <div class="form-group">
             <label for="lead-email">Business Email *</label>
-            <input type="email" id="lead-email" name="email" required />
+            <input type="email" id="lead-email" name="email" autocomplete="email" required />
           </div>
           
           <div class="form-group">
             <label for="lead-company">Company</label>
-            <input type="text" id="lead-company" name="company" />
+            <input type="text" id="lead-company" name="company" autocomplete="organization" />
           </div>
           
           <div class="form-group">
@@ -95,14 +95,14 @@ export function initLeadModal() {
     lastFocusedElement = document.activeElement;
     modal.style.display = 'flex';
     modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('modal-open');
     document.getElementById('lead-name').focus();
   }
 
   function closeModal() {
     modal.style.display = 'none';
     modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
+    document.body.classList.remove('modal-open');
     if (lastFocusedElement) lastFocusedElement.focus();
     
     // Reset form state on close

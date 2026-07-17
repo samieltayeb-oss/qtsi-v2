@@ -45,7 +45,7 @@
   </nav>
 
   <!-- 1. Hero -->
-  <header class="exec-section hero-bg" style="padding-top: var(--sp-24); padding-bottom: var(--sp-12);">
+  <header class="exec-section hero-bg exec-hero">
     <div class="container flex items-center justify-between" style="gap: var(--sp-12); flex-wrap: wrap;">
       <div style="flex: 1; min-width: 300px;">
         <a href="/academy.html" style="display: inline-block; margin-bottom: var(--sp-6); font-size: 0.875rem; font-weight: 600; color: var(--text-secondary); text-decoration: none;">← Back to Academy Hub</a>
@@ -85,7 +85,7 @@
       <div class="exec-card fade-up delay-100" style="max-width: 900px; width: 100%; padding: var(--sp-12); text-align: center;">
         <h3 class="display-sm" style="margin-bottom: var(--sp-6);">How do you train 500 people without stopping operations?</h3>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--sp-6); text-align: left;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: var(--sp-6); text-align: left;">
           <div>
             <h4 style="font-weight: 700; margin-bottom: var(--sp-2);">1. Self-Paced</h4>
             <p class="text-body" style="font-size: 0.9rem;">Cloud-hosted modules that employees complete on their own schedule, minimizing productivity loss.</p>
@@ -129,15 +129,15 @@
         <form class="qtsi-embedded-form" style="display: flex; flex-direction: column; gap: var(--sp-4);">
           <div style="display: flex; flex-direction: column; gap: 4px;">
             <label for="name" style="font-size: 0.875rem; font-weight: 600; color: var(--text-primary);">Full Name</label>
-            <input type="text" id="name" name="name" required style="padding: 12px; border: 1px solid var(--border-medium); border-radius: var(--r-md); font-family: inherit;" />
+            <input type="text" id="name" autocomplete="name" name="name" required style="padding: 12px; border: 1px solid var(--border-medium); border-radius: var(--r-md); font-family: inherit;" />
           </div>
           <div style="display: flex; flex-direction: column; gap: 4px;">
             <label for="email" style="font-size: 0.875rem; font-weight: 600; color: var(--text-primary);">Work Email</label>
-            <input type="email" id="email" name="email" required style="padding: 12px; border: 1px solid var(--border-medium); border-radius: var(--r-md); font-family: inherit;" />
+            <input type="email" id="email" autocomplete="email" name="email" required style="padding: 12px; border: 1px solid var(--border-medium); border-radius: var(--r-md); font-family: inherit;" />
           </div>
           <div style="display: flex; flex-direction: column; gap: 4px;">
             <label for="company" style="font-size: 0.875rem; font-weight: 600; color: var(--text-primary);">Company Name</label>
-            <input type="text" id="company" name="company" required style="padding: 12px; border: 1px solid var(--border-medium); border-radius: var(--r-md); font-family: inherit;" />
+            <input type="text" id="company" autocomplete="organization" name="company" required style="padding: 12px; border: 1px solid var(--border-medium); border-radius: var(--r-md); font-family: inherit;" />
           </div>
           <div style="display: flex; flex-direction: column; gap: 4px;">
             <label for="employees" style="font-size: 0.875rem; font-weight: 600; color: var(--text-primary);">Number of Employees</label>

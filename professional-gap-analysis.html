@@ -37,7 +37,7 @@
   </nav>
 
   <!-- Hero & Form -->
-  <header class="exec-section hero-bg" style="padding-top: var(--sp-24); padding-bottom: var(--sp-12); min-height: 80vh; display: flex; align-items: center;">
+  <header class="exec-section hero-bg exec-hero--fullscreen">
     <div class="container flex items-start justify-between" style="gap: var(--sp-12); flex-wrap: wrap;">
       
       <div style="flex: 1; min-width: 300px; padding-top: var(--sp-8);">
@@ -78,17 +78,17 @@
             
             <div style="margin-bottom: var(--sp-4);">
               <label for="name" style="display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 8px;">Full Name *</label>
-              <input type="text" id="name" name="name" required style="width: 100%; padding: 12px; border: 1px solid var(--border-light); border-radius: var(--r-md); font-family: inherit;" />
+              <input type="text" id="name" autocomplete="name" name="name" required style="width: 100%; padding: 12px; border: 1px solid var(--border-light); border-radius: var(--r-md); font-family: inherit;" />
             </div>
             
             <div style="margin-bottom: var(--sp-4);">
               <label for="email" style="display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 8px;">Business Email *</label>
-              <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; border: 1px solid var(--border-light); border-radius: var(--r-md); font-family: inherit;" />
+              <input type="email" id="email" autocomplete="email" name="email" required style="width: 100%; padding: 12px; border: 1px solid var(--border-light); border-radius: var(--r-md); font-family: inherit;" />
             </div>
             
             <div style="margin-bottom: var(--sp-4);">
               <label for="company" style="display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 8px;">Company</label>
-              <input type="text" id="company" name="company" style="width: 100%; padding: 12px; border: 1px solid var(--border-light); border-radius: var(--r-md); font-family: inherit;" />
+              <input type="text" id="company" name="company" autocomplete="organization" style="width: 100%; padding: 12px; border: 1px solid var(--border-light); border-radius: var(--r-md); font-family: inherit;" />
             </div>
             
             <div style="margin-bottom: var(--sp-6);">

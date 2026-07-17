@@ -4,6 +4,8 @@ import { initBooking } from './src/booking.js';
 import { initLeadModal } from './src/lead-modal.js';
 import { initAnalytics } from './src/analytics.js';
 
+import { initMobileNav } from './src/nav.js';
+
 function init() {
   // 1. Initialize Analytics (GA4)
   initAnalytics();
@@ -14,6 +16,7 @@ function init() {
   // 3. Initialize Modals & Popups
   initBooking();
   initLeadModal();
+  initMobileNav();
 
   // 4. Fade Up Intersection Observer
   const observerOptions = {

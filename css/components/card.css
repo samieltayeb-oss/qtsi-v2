@@ -53,3 +53,10 @@
   background-color: rgba(16, 185, 129, 0.1);
   color: var(--accent-secondary);
 }
+
+@media (max-width: 768px) {
+  .exec-card {
+    padding: var(--sp-6);
+  }
+}
+

@@ -65,3 +65,43 @@ p {
   margin-top: 0;
   margin-bottom: var(--sp-6);
 }
+
+@media (max-width: 768px) {
+  .display-xl {
+    font-size: 2.25rem;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  
+  .display-lg {
+    font-size: 1.875rem;
+    line-height: 1.2;
+  }
+  
+  .display-md {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+  
+  .text-body-lg {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .display-xl {
+    font-size: 1.875rem;
+    line-height: 1.2;
+  }
+  
+  .display-lg {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+  
+  .display-md {
+    font-size: 1.35rem;
+    line-height: 1.3;
+  }
+}
+

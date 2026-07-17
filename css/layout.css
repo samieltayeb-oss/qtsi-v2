@@ -45,3 +45,111 @@
 .gap-8 {
   gap: var(--sp-8);
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: var(--sp-4);
+    padding-right: var(--sp-4);
+  }
+  
+  .exec-section {
+    padding-top: var(--sp-12);
+    padding-bottom: var(--sp-12);
+  }
+}
+
+@media (max-width: 480px) {
+  .exec-section {
+    padding-top: var(--sp-8);
+    padding-bottom: var(--sp-8);
+  }
+}
+
+/* Responsive Hero Sections */
+.exec-hero {
+  padding-top: var(--sp-24);
+  padding-bottom: var(--sp-12);
+}
+
+.exec-hero--large {
+  padding-top: var(--sp-24);
+  padding-bottom: var(--sp-24);
+}
+
+.exec-hero--fullscreen {
+  padding-top: var(--sp-24);
+  padding-bottom: var(--sp-12);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .exec-hero,
+  .exec-hero--large,
+  .exec-hero--fullscreen {
+    padding-top: calc(var(--sp-12) + var(--sp-4));
+    padding-bottom: var(--sp-8);
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .exec-hero,
+  .exec-hero--large,
+  .exec-hero--fullscreen {
+    padding-top: calc(var(--sp-8) + var(--sp-4));
+    padding-bottom: var(--sp-6);
+  }
+}
+
+.exec-main-spacing {
+  padding-top: var(--sp-32);
+  padding-bottom: var(--sp-32);
+}
+
+@media (max-width: 768px) {
+  .exec-main-spacing {
+    padding-top: var(--sp-12);
+    padding-bottom: var(--sp-12);
+  }
+}
+
+/* Enhanced Mobile Footer */
+.exec-footer {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .exec-footer > div.container.flex {
+    flex-direction: column !important;
+    gap: var(--sp-8) !important;
+    padding: var(--sp-8) 0 !important;
+  }
+  
+  .exec-footer > div.container.flex > div {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  
+  /* Make touch targets on links larger in the footer */
+  .exec-footer ul li a {
+    display: inline-block;
+    padding: var(--sp-2) 0;
+    min-height: 44px;
+    box-sizing: border-box;
+  }
+  
+  /* Bottom copyright area */
+  .exec-footer > div:last-child {
+    flex-direction: column-reverse !important;
+    align-items: center !important;
+    gap: var(--sp-4) !important;
+    text-align: center !important;
+  }
+}
+
+
+
+
