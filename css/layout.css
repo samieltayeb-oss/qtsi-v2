@@ -150,6 +150,46 @@
   }
 }
 
+/* AI Governance Assessment Page Hero Grid */
+.ag-hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: var(--sp-12);
+  margin-bottom: var(--sp-12);
+  min-height: 400px;
+}
+
+.ag-hero-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ag-hero-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .ag-hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+    min-height: auto;
+    text-align: center;
+  }
+  
+  .ag-hero-image-wrapper {
+    margin-top: var(--sp-4);
+  }
+}
+
+
 
 
 
