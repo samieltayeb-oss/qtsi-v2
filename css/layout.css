@@ -1,0 +1,47 @@
+/* Layout System */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: var(--sp-6);
+  padding-right: var(--sp-6);
+}
+
+.exec-section {
+  padding-top: var(--sp-24);
+  padding-bottom: var(--sp-24);
+}
+
+.exec-section--alt {
+  background-color: var(--bg-secondary);
+}
+
+/* Flex & Grid Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-4 {
+  gap: var(--sp-4);
+}
+
+.gap-8 {
+  gap: var(--sp-8);
+}

@@ -1,0 +1,40 @@
+/* Component: Buttons */
+/* Acceptance: Supports Brand Book (Clean, Minimal, Trust), Accessible, Reusable, High-performance */
+
+.exec-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-3) var(--sp-6);
+  border-radius: var(--r-md);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.exec-button--primary {
+  background-color: var(--accent-primary);
+  color: #FFFFFF;
+}
+.exec-button--primary:hover {
+  background-color: var(--accent-primary-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.exec-button--secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-medium);
+}
+.exec-button--secondary:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.exec-button:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}

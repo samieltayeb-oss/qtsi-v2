@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request a Procurement Quote | QTSI</title>
+  <meta name="description" content="Request a formal technology procurement quote from QTSI." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  
+  <link rel="stylesheet" href="/style.css" />
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+    
+    @media (min-width: 1024px) {
+      body {
+        flex-direction: row;
+      }
+    }
+    
+    .quote-left {
+      background-color: #0A0F1C;
+      color: white;
+      padding: var(--sp-12) var(--sp-8);
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      max-width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    @media (min-width: 1024px) {
+      .quote-left {
+        max-width: 45%;
+        padding: var(--sp-16) var(--sp-12);
+        position: sticky;
+        top: 0;
+        height: 100vh;
+      }
+    }
+    
+    /* Background grid effect */
+    .quote-left::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: 0;
+      pointer-events: none;
+    }
+    
+    .quote-left-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .quote-right {
+      background-color: white;
+      padding: var(--sp-12) var(--sp-8);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    
+    @media (min-width: 1024px) {
+      .quote-right {
+        padding: var(--sp-16) var(--sp-12);
+      }
+    }
+    
+    .quote-form-container {
+      width: 100%;
+      max-width: 600px;
+    }
+    
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-4);
+      margin-bottom: var(--sp-6);
+    }
+    
+    @media (min-width: 640px) {
+      .form-row {
+        flex-direction: row;
+        gap: var(--sp-6);
+      }
+      .form-row > * {
+        flex: 1;
+      }
+    }
+    
+    .form-group {
+      margin-bottom: var(--sp-6);
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: var(--sp-2);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--r-md);
+      font-family: inherit;
+      font-size: 1rem;
+      background-color: var(--bg-secondary);
+      transition: all 0.2s;
+      box-sizing: border-box;
+    }
+    
+    .form-group input:focus, 
+    .form-group select:focus, 
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+      background-color: white;
+    }
+    
+    .vendor-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--sp-6);
+      margin-top: auto;
+      padding-top: var(--sp-6);
+    }
+    
+    @media (min-width: 640px) {
+      .vendor-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .vendor-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      height: 40px;
+      opacity: 0.7;
+    }
+    
+    .vendor-item img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: var(--sp-8);
+      transition: color 0.2s;
+    }
+    
+    .back-link:hover {
+      color: var(--accent-primary);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LEFT PANE: BRAND & TRUST -->
+  <div class="quote-left">
+    <div class="quote-left-content">
+      <a href="/" style="display: block; margin-bottom: var(--sp-6);">
+        <!-- Using a white logo for the dark background. If only full color is available, brightness filter helps. -->
+        <img width="200" height="100" src="/qtsi-logo.png" alt="QTSI Logo" style="height: 40px; filter: brightness(0) invert(1);" />
+      </a>
+      
+      <span class="exec-badge exec-badge--success" style="margin-bottom: var(--sp-2); align-self: flex-start;">Executive Technology Procurement</span>
+      
+      <h1 class="display-lg" style="margin-bottom: var(--sp-2); color: white; font-size: 2rem;">
+        Request a formal procurement quote.
+      </h1>
+      
+      <p class="text-body-lg" style="color: rgba(255,255,255,0.7); margin-bottom: var(--sp-4); max-width: 90%; font-size: 1rem;">
+        Provide your hardware requirements below. A QTSI procurement advisor will review your needs, consult our technology ecosystem, and return a governed sourcing proposal outlining options, pricing, and lead times.
+      </p>
+      
+      <div style="margin-bottom: var(--sp-4); border-radius: var(--r-lg); overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1);">
+        <img width="400" height="300" src="/quote-portal-bg.png" alt="Executive Hardware Procurement" style="width: 100%; height: auto; display: block;" />
+      </div>
+      
+      <div style="margin-top: auto;">
+        <h3 style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.5); margin-bottom: var(--sp-4);">Authorized Ecosystem</h3>
+        <div class="vendor-grid">
+          <div class="vendor-item"><img width="200" height="100" src="/vendors/dell.svg" alt="Dell Technologies" /></div>
+          <div class="vendor-item"><img width="200" height="100" src="/vendors/lenovo.svg" alt="Lenovo" /></div>
+          <div class="vendor-item"><img width="200" height="100" src="/vendors/hp.svg" alt="HP" /></div>
+          <div class="vendor-item"><img width="200" height="100" src="/vendors/cisco.svg" alt="Cisco" /></div>
+          <div class="vendor-item"><img width="200" height="100" src="/vendors/microsoft.svg" alt="Microsoft" /></div>
+          <div class="vendor-item" style="font-weight: 800; font-size: 1.25rem; letter-spacing: -0.05em; color: white; display: flex; align-items: center; gap: 6px;"><div style="width: 20px; height: 10px; background-color: #01A982;"></div>HPE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANE: FORM -->
+  <div class="quote-right">
+    <div class="quote-form-container">
+      
+      <a href="/procurement.html" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Procurement
+      </a>
+      
+      <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: var(--sp-8);">Hardware Requirements</h2>
+      
+      <form id="quote-form">
+        <input type="hidden" name="form_type" value="Procurement Quote" />
+        <input type="hidden" name="source" value="procurement-quote.html" />
+        
+        <div class="form-row">
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="first-name">First Name *</label>
+            <input type="text" id="first-name" name="first_name" required />
+          </div>
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="last-name">Last Name *</label>
+            <input type="text" id="last-name" name="last_name" required />
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="email">Business Email *</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="company">Company *</label>
+            <input type="text" id="company" name="company" required />
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="category">Category of Interest *</label>
+          <select id="category" name="category" required>
+            <option value="">Select a category...</option>
+            <option value="End-User Computing (Laptops/Desktops)">End-User Computing (Laptops/Desktops)</option>
+            <option value="Infrastructure (Servers/Storage)">Infrastructure (Servers/Storage)</option>
+            <option value="Networking & Security">Networking & Security</option>
+            <option value="Cloud & Licensing">Cloud & Licensing</option>
+            <option value="Collaboration / Meeting Rooms">Collaboration / Meeting Rooms</option>
+            <option value="Other">Other / Mixed</option>
+          </select>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="vendor">Preferred Ecosystem</label>
+            <select id="vendor" name="preferred_vendor">
+              <option value="Vendor-Neutral (Recommend best fit)">Vendor-Neutral (Recommend best fit)</option>
+              <option value="Dell Technologies">Dell Technologies</option>
+              <option value="Lenovo">Lenovo</option>
+              <option value="HP">HP</option>
+              <option value="Cisco">Cisco</option>
+              <option value="HPE">HPE</option>
+              <option value="Microsoft">Microsoft</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="quantity">Estimated Scale</label>
+            <select id="quantity" name="quantity">
+              <option value="">Select scale...</option>
+              <option value="1-10 units">1 - 10 units</option>
+              <option value="11-50 units">11 - 50 units</option>
+              <option value="50-200 units">50 - 200 units</option>
+              <option value="200+ units / Enterprise">200+ units / Enterprise</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="timeline">Expected Timeline</label>
+          <select id="timeline" name="timeline">
+            <option value="">Select timeline...</option>
+            <option value="Immediate (Within 30 days)">Immediate (Within 30 days)</option>
+            <option value="Planned (1-3 months)">Planned (1-3 months)</option>
+            <option value="Budgeting (3-6+ months)">Budgeting (3-6+ months)</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="details">Specific Models or Additional Requirements</label>
+          <textarea id="details" name="details" rows="4" placeholder="e.g., Lenovo ThinkPad T-Series for engineering team, or 2U Rack Servers for virtualization cluster..."></textarea>
+        </div>
+        
+        <div class="form-group" style="display: flex; gap: var(--sp-2); align-items: flex-start;">
+          <input type="checkbox" id="consent" name="consent" required style="width: auto; margin-top: 4px;" />
+          <label for="consent" style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+            I consent to QTSI collecting my information to process this quote request. *
+          </label>
+        </div>
+        
+        <div id="form-error" style="display: none; color: #dc2626; margin-bottom: var(--sp-4); font-size: 0.875rem; padding: 1rem; background: #fee2e2; border-radius: var(--r-md);"></div>
+        
+        <button type="submit" id="submit-btn" class="exec-button exec-button--primary" style="width: 100%; padding: 1rem; font-size: 1rem;">Submit Quote Request</button>
+      </form>
+      
+      <div id="form-success" style="display: none; text-align: center; padding: var(--sp-12) 0;">
+        <div style="width: 64px; height: 64px; background: #dcfce7; color: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--sp-6);">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: var(--sp-4);">Request Received</h2>
+        <p class="text-body" style="margin-bottom: var(--sp-8);">Thank you for your inquiry. A QTSI procurement advisor will review your requirements and be in touch within 1 business day.</p>
+        <a href="/procurement.html" class="exec-button exec-button--secondary">Return to Procurement</a>
+      </div>
+      
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('quote-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const form = e.target;
+      const submitBtn = document.getElementById('submit-btn');
+      const errorDiv = document.getElementById('form-error');
+      const successDiv = document.getElementById('form-success');
+      
+      if (submitBtn.disabled) return;
+      
+      errorDiv.style.display = 'none';
+      const originalText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting Request...';
+      
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      
+      // Format details to append custom hardware fields to the message field for standard API compatibility
+      const enrichedData = {
+        name: `${data.first_name} ${data.last_name}`,
+        email: data.email,
+        company: data.company,
+        service: "Procurement",
+        form_type: "Hardware Quote",
+        message: `Category: ${data.category}\nVendor: ${data.preferred_vendor}\nScale: ${data.quantity}\nTimeline: ${data.timeline}\n\nRequirements:\n${data.details}`
+      };
+      
+      try {
+        const res = await fetch('/api/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(enrichedData)
+        });
+        
+        if (!res.ok) throw new Error('Network response was not ok');
+        const result = await res.json().catch(() => ({ ok: true })); // Handle empty V1 response gracefully
+        
+        if (result.ok || res.ok) {
+          form.style.display = 'none';
+          successDiv.style.display = 'block';
+        } else {
+          throw new Error(result.error || 'Submission failed');
+        }
+      } catch (err) {
+        errorDiv.textContent = 'Unable to submit your quote request. Please try again or email info@qtsi.ca directly.';
+        errorDiv.style.display = 'block';
+        console.error('Quote submit error:', err);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
+    });
+  </script>
+</body>
+</html>

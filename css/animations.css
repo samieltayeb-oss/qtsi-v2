@@ -1,0 +1,45 @@
+/* 
+  Animations & Motion Philosophy 
+  10% Premium Motion Moments, respecting prefers-reduced-motion.
+*/
+
+/* Subtle fade up for section elements (only if JS is enabled) */
+.js-enabled .fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.js-enabled .fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for child elements (e.g. cards) */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+
+/* Premium Subtle 3D Float for Hero Graphic */
+@keyframes float-3d {
+  0% { transform: translateY(0) rotateX(0deg) rotateY(0deg); }
+  33% { transform: translateY(-8px) rotateX(2deg) rotateY(-2deg); }
+  66% { transform: translateY(4px) rotateX(-1deg) rotateY(1deg); }
+  100% { transform: translateY(0) rotateX(0deg) rotateY(0deg); }
+}
+
+.float-3d {
+  animation: float-3d 12s ease-in-out infinite;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Respect User Preferences */
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

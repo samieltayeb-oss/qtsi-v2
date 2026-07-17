@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Governance Readiness Assessment | QTSI</title>
+  <meta name="description" content="Benchmark your organization's AI governance posture across 5 dimensions. 25 executive-grade diagnostic questions. Free — no email required. Results in under 8 minutes." />
+  <meta name="author" content="Manav Chadha" />
+  <meta property="og:title" content="AI Governance Readiness Assessment | QTSI" />
+  <meta property="og:description" content="Where does your organization stand on AI governance? Benchmark across governance, security, compliance, operations, and leadership in under 8 minutes." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://qtsi.ca/ai-governance-assessment" />
+  <meta property="og:image" content="https://qtsi.ca/images/books-og.png" />
+  <meta property="og:site_name" content="QTSI" />
+  <meta property="og:locale" content="en_CA" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI Governance Readiness Assessment | QTSI" />
+  <meta name="twitter:description" content="25-question executive diagnostic. Benchmark your AI governance posture across 5 dimensions. Free — no email." />
+  <meta name="twitter:image" content="https://qtsi.ca/images/books-og.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/qtsi-logo.png" />
+  <link rel="apple-touch-icon" href="/images/qtsi-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/css/assessment.css" />
+  
+  <script>document.documentElement.classList.add('js-enabled');</script>
+
+  <link rel="canonical" href="https://www.qtsi.ca/ai-governance-assessment" />
+  <link rel="preload" as="image" href="/hero_assessment.png" />
+</head>
+<body data-subpage>
+  <!-- Premium Global Navigation -->
+  <nav class="exec-nav">
+    <div class="container exec-nav-container">
+      <a href="/" class="exec-nav-logo" aria-label="QTSI Home">
+        <img width="200" height="100" src="/qtsi-logo.png" alt="QTSI Logo" />
+      </a>
+      <div class="exec-nav-links">
+        <a href="/ai-governance.html" class="exec-nav-link" style="color: var(--accent-primary); font-weight: 700;">AI Governance</a>
+        <a href="/executive-advisory.html" class="exec-nav-link">Executive Advisory</a>
+        <a href="/academy.html" class="exec-nav-link">Academy</a>
+        <a href="/procurement.html" class="exec-nav-link">Procurement</a>
+        <a href="/about.html" class="exec-nav-link">About</a>
+      </div>
+      <div class="exec-nav-links">
+        <a href="/contact.html" class="exec-button exec-button--secondary" style="padding: 6px 16px; font-size: 0.875rem;">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       MAIN — ASSESSMENT PAGE
+  ═══════════════════════════════════════════════════════════ -->
+  <main id="main-content" class="ag-page">
+
+    <!-- ═══════════════════════════════════════════════
+         ZONE 1 — LANDING
+    ═══════════════════════════════════════════════ -->
+    <section id="ag-landing" class="ag-zone is-active" aria-label="Assessment introduction">
+      <div class="exec-section hero-bg" style="padding-top: var(--sp-24); padding-bottom: var(--sp-12); min-height: 80vh; display: flex; align-items: center;">
+        <div class="container flex items-center justify-between" style="gap: var(--sp-12); flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 300px;">
+            <span class="exec-badge exec-badge--primary fade-up" style="margin-bottom: var(--sp-4);">Free Executive Diagnostic</span>
+            <h1 class="display-xl fade-up delay-100" style="margin-bottom: var(--sp-6);">
+              AI Governance Assessment
+            </h1>
+            <p class="text-body-lg fade-up delay-200" style="margin-bottom: var(--sp-8); max-width: 600px;">
+              Where does your organization stand on AI governance? Benchmark your posture across security, compliance, operations, and leadership in under 8 minutes. No email required.
+            </p>
+            
+            <div id="ag-resume-banner" style="display: none; margin-bottom: var(--sp-6);" hidden aria-live="polite">
+              <div class="exec-card" style="padding: var(--sp-4); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--sp-4); background: var(--bg-elevated); border: 1px solid var(--accent-primary);">
+                <div style="color: var(--text-primary); font-weight: 600; font-size: 0.875rem;">
+                  <span style="color: var(--accent-primary); margin-right: 8px;">●</span> Session found. <span id="ag-resume-q"></span> of 25 completed.
+                </div>
+                <div style="display: flex; gap: var(--sp-2);">
+                  <button id="ag-restart-btn" class="exec-button exec-button--secondary" style="padding: 6px 16px; font-size: 0.875rem;">Start Over</button>
+                  <button id="ag-resume-btn" class="exec-button exec-button--primary" style="padding: 6px 16px; font-size: 0.875rem;">Resume</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex gap-4 fade-up delay-300" id="ag-new-session-actions">
+              <button id="ag-begin-btn" class="exec-button exec-button--primary">Begin Diagnostic</button>
+            </div>
+            
+            <div class="fade-up delay-400" style="margin-top: var(--sp-12); border-top: 1px solid var(--border-medium); padding-top: var(--sp-8);">
+              <div style="display: flex; gap: var(--sp-6); flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 8px; font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  Under 8 Minutes
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  25 Questions
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  PDF Report
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fade-up delay-400" style="flex: 1; min-width: 300px; display: flex; justify-content: flex-end; perspective: 1000px;">
+            <img width="1280" height="720" src="/hero_assessment.png" class="float-3d" alt="AI Governance Assessment" style="max-width: 100%; height: auto; border-radius: var(--r-lg); box-shadow: var(--shadow-lg);" />
+          </div>
+        </div>
+      </div>
+    </section><!-- /#ag-landing -->
+
+
+    <!-- ═══════════════════════════════════════════════
+         ZONE 2 — CONTEXT CAPTURE
+    ═══════════════════════════════════════════════ -->
+    <section id="ag-context" class="ag-zone ag-zone--context" aria-label="Organization context" hidden>
+      <div class="ag-context-inner">
+
+        <div class="ag-context-header">
+          <h2>Tell Us About Your Organization</h2>
+          <p>
+            Optional context shapes your benchmark comparison and tailors recommendations.
+            Skip ahead if you prefer to start immediately.
+          </p>
+        </div>
+
+        <div class="ag-context-grid">
+
+          <!-- Org size -->
+          <div class="ag-context-card">
+            <h3>Organization Size</h3>
+            <div class="ag-chips" data-context="size" role="group" aria-label="Select organization size">
+              <button class="ag-chip" data-value="1-50" type="button">1–50</button>
+              <button class="ag-chip" data-value="51-250" type="button">51–250</button>
+              <button class="ag-chip" data-value="251-1000" type="button">251–1,000</button>
+              <button class="ag-chip" data-value="1000+" type="button">1,000+</button>
+            </div>
+          </div>
+
+          <!-- Industry -->
+          <div class="ag-context-card">
+            <h3>Industry</h3>
+            <div class="ag-chips" data-context="industry" role="group" aria-label="Select industry">
+              <button class="ag-chip" data-value="financial" type="button">Financial Services</button>
+              <button class="ag-chip" data-value="healthcare" type="button">Healthcare</button>
+              <button class="ag-chip" data-value="energy" type="button">Energy</button>
+              <button class="ag-chip" data-value="technology" type="button">Technology</button>
+              <button class="ag-chip" data-value="government" type="button">Government</button>
+              <button class="ag-chip" data-value="professional" type="button">Professional Services</button>
+              <button class="ag-chip" data-value="manufacturing" type="button">Manufacturing</button>
+              <button class="ag-chip" data-value="other" type="button">Other</button>
+            </div>
+          </div>
+
+          <!-- Region -->
+          <div class="ag-context-card">
+            <h3>Region</h3>
+            <div class="ag-chips" data-context="region" role="group" aria-label="Select region">
+              <button class="ag-chip" data-value="canada" type="button">Canada</button>
+              <button class="ag-chip" data-value="us" type="button">United States</button>
+              <button class="ag-chip" data-value="eu" type="button">European Union</button>
+              <button class="ag-chip" data-value="other" type="button">Other</button>
+            </div>
+          </div>
+
+          <!-- Role -->
+          <div class="ag-context-card">
+            <h3>Your Role</h3>
+            <div class="ag-chips" data-context="role" role="group" aria-label="Select your role">
+              <button class="ag-chip" data-value="csuite" type="button">C-Suite Executive</button>
+              <button class="ag-chip" data-value="it" type="button">IT / Technology Leader</button>
+              <button class="ag-chip" data-value="risk" type="button">Risk &amp; Compliance</button>
+              <button class="ag-chip" data-value="board" type="button">Board Member</button>
+              <button class="ag-chip" data-value="consultant" type="button">Consultant / Advisor</button>
+              <button class="ag-chip" data-value="other" type="button">Other</button>
+            </div>
+          </div>
+
+        </div><!-- /.ag-context-grid -->
+
+        <div class="ag-context-actions">
+          <button id="ag-context-continue" class="ag-btn-primary" type="button">
+            Continue to Assessment
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+          <button id="ag-context-skip" class="ag-btn-ghost" type="button">
+            Skip, start the assessment →
+          </button>
+        </div>
+
+      </div>
+    </section><!-- /#ag-context -->
+
+
+    <!-- ═══════════════════════════════════════════════
+         ZONE 3 — ASSESSMENT ENGINE
+    ═══════════════════════════════════════════════ -->
+    <section id="ag-assessment" class="ag-zone ag-zone--assessment" aria-label="Assessment questions" hidden>
+
+      <!-- Sticky progress header -->
+      <div class="ag-progress-header" role="region" aria-label="Assessment progress">
+        <div class="ag-progress-meta">
+          <span id="ag-q-counter" aria-live="polite">Question 1 of 25</span>
+          <span class="ag-progress-sep" aria-hidden="true">·</span>
+          <span id="ag-time-remaining" aria-live="polite">~8 min remaining</span>
+        </div>
+
+        <div class="ag-global-bar"
+             role="progressbar"
+             aria-label="Overall assessment progress"
+             aria-valuenow="0"
+             aria-valuemin="0"
+             aria-valuemax="100">
+          <div id="ag-global-fill" class="ag-global-fill" style="width:0%"></div>
+        </div>
+
+        <nav class="ag-category-pills" aria-label="Assessment categories">
+          <div class="ag-cat-pill" data-cat="governance">
+            <span class="ag-cat-dot" aria-hidden="true"></span>
+            Governance
+          </div>
+          <div class="ag-cat-pill" data-cat="security">
+            <span class="ag-cat-dot" aria-hidden="true"></span>
+            Security
+          </div>
+          <div class="ag-cat-pill" data-cat="compliance">
+            <span class="ag-cat-dot" aria-hidden="true"></span>
+            Compliance
+          </div>
+          <div class="ag-cat-pill" data-cat="operations">
+            <span class="ag-cat-dot" aria-hidden="true"></span>
+            Operations
+          </div>
+          <div class="ag-cat-pill" data-cat="leadership">
+            <span class="ag-cat-dot" aria-hidden="true"></span>
+            Leadership
+          </div>
+        </nav>
+      </div>
+
+      <!-- Assessment body -->
+      <div class="ag-assessment-body">
+
+        <!-- Category intro card (populated by JS) -->
+        <div id="ag-cat-intro" class="ag-cat-intro" style="display:none" aria-live="polite" role="status">
+          <div class="ag-cat-intro-icon" id="ag-cat-intro-icon" aria-hidden="true"></div>
+          <div class="ag-cat-intro-num" id="ag-cat-intro-num">Category 1 of 5</div>
+          <h2 class="ag-cat-intro-name" id="ag-cat-intro-name">Governance</h2>
+          <p class="ag-cat-intro-desc" id="ag-cat-intro-desc"></p>
+          <button id="ag-cat-intro-continue" class="ag-btn-primary ag-cat-intro-btn" type="button">
+            Begin →
+          </button>
+        </div>
+
+        <!-- Question card + navigation (populated by JS) -->
+        <div id="ag-question-wrap" class="ag-question-wrap">
+
+          <div id="ag-question-card" class="ag-question-card" role="region" aria-label="Current question">
+
+            <div class="ag-question-meta" aria-hidden="true">
+              <span class="ag-q-category-label" id="ag-q-category">
+                <span class="ag-q-cat-dot"></span>
+                Governance
+              </span>
+              <span class="ag-q-num-label" id="ag-q-num">Q1 of 5</span>
+            </div>
+
+            <h2 class="ag-question-text" id="ag-q-text">
+              Loading question...
+            </h2>
+
+            <div class="ag-answers"
+                 id="ag-answers"
+                 role="radiogroup"
+                 aria-labelledby="ag-q-text">
+              <!-- Answer buttons populated by JS -->
+            </div>
+
+          </div><!-- /#ag-question-card -->
+
+          <!-- Navigation row -->
+          <div class="ag-nav" role="navigation" aria-label="Question navigation">
+            <button id="ag-nav-back"
+                    class="ag-nav-btn ag-nav-back"
+                    type="button"
+                    disabled
+                    aria-label="Go to previous question">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+              Back
+            </button>
+
+            <div class="ag-nav-center">
+              <button id="ag-save-btn"
+                      class="ag-save-btn"
+                      type="button"
+                      aria-label="Save assessment progress">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                Save Progress
+              </button>
+            </div>
+
+            <button id="ag-nav-next"
+                    class="ag-nav-btn ag-nav-next"
+                    type="button"
+                    disabled
+                    aria-label="Go to next question">
+              Next
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+          </div><!-- /.ag-nav -->
+
+        </div><!-- /#ag-question-wrap -->
+
+      </div><!-- /.ag-assessment-body -->
+
+    </section><!-- /#ag-assessment -->
+
+
+    <!-- ═══════════════════════════════════════════════
+         ZONE 4 — CALCULATING
+    ═══════════════════════════════════════════════ -->
+    <section id="ag-calculating" class="ag-zone ag-zone--calculating" aria-label="Calculating results" aria-live="polite" hidden>
+      <div class="ag-calc-inner">
+        <div class="ag-calc-spinner" role="status" aria-label="Processing"></div>
+        <h2 class="ag-calc-headline">Analyzing your AI governance posture&hellip;</h2>
+
+        <ul class="ag-calc-list" aria-label="Analysis steps">
+          <li class="ag-calc-item" data-criterion="governance">Evaluating governance framework maturity</li>
+          <li class="ag-calc-item" data-criterion="security">Assessing AI security controls</li>
+          <li class="ag-calc-item" data-criterion="compliance">Reviewing regulatory compliance posture</li>
+          <li class="ag-calc-item" data-criterion="operations">Measuring operational AI maturity</li>
+          <li class="ag-calc-item" data-criterion="leadership">Benchmarking executive engagement</li>
+          <li class="ag-calc-item" data-criterion="composite">Generating composite readiness score</li>
+        </ul>
+
+        <div class="ag-calc-score" aria-live="polite" aria-label="Your readiness score">
+          <span id="ag-calc-score-num" class="ag-calc-score-num">0</span>
+          <span class="ag-calc-score-max">/100</span>
+        </div>
+      </div>
+    </section><!-- /#ag-calculating -->
+
+
+    <!-- ═══════════════════════════════════════════════
+         ZONE 5 — FULL RESULTS DASHBOARD
+    ═══════════════════════════════════════════════ -->
+    <section id="ag-results" class="ag-zone ag-zone--results" aria-label="Assessment results" hidden>
+
+      <!-- Print-only header -->
+      <div class="ag-print-header" aria-hidden="true">
+        <picture>
+  <source srcset="/images/qtsi-logo.webp" type="image/webp">
+  <img width="200" height="100" src="/images/qtsi-logo.png" alt="QTSI" class="ag-print-logo" />
+</picture>
+        <div class="ag-print-header-text">
+          <div class="ag-print-title">AI Governance Readiness Assessment</div>
+          <div class="ag-print-subtitle">Executive Confidential Report · qtsi.ca</div>
+        </div>
+        <div id="ag-print-date" class="ag-print-date"></div>
+      </div>
+
+      <div class="ag-results-wrap">
+
+        <!-- 1. SCORE HERO ─────────────────────────────── -->
+        <section class="ag-results-section ag-hero-section" aria-labelledby="ag-results-heading">
+
+          <div class="ag-ring-container" aria-hidden="true">
+            <svg class="ag-ring-svg" viewBox="0 0 220 220" aria-hidden="true">
+              <defs>
+                <linearGradient id="ag-ring-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#E8C97A"/>
+                  <stop offset="100%" stop-color="#C9A84C"/>
+                </linearGradient>
+              </defs>
+              <circle cx="110" cy="110" r="100" class="ag-ring-track"/>
+              <circle cx="110" cy="110" r="100" class="ag-ring-fill" id="ag-ring-fill"/>
+            </svg>
+            <div class="ag-ring-overlay">
+              <span class="ag-ring-num" id="ag-ring-num">0</span>
+              <span class="ag-ring-denom">/100</span>
+            </div>
+          </div>
+
+          <div class="ag-score-meta">
+            <div class="ag-maturity-badge" id="ag-maturity-badge" aria-live="polite">—</div>
+            <h1 id="ag-results-heading" class="ag-results-h1">Your AI Governance Readiness Score</h1>
+            <p class="ag-maturity-desc" id="ag-maturity-desc"></p>
+            <div class="ag-context-summary" id="ag-context-summary" aria-label="Your organization profile"></div>
+          </div>
+
+        </section>
+
+        <!-- 2. PERFORMANCE BY DIMENSION ──────────────── -->
+        <section class="ag-results-section ag-dimensions-section" aria-label="Performance by dimension">
+          <h2 class="ag-section-h2">Performance by Dimension</h2>
+          <div class="ag-dimensions-layout">
+            <div class="ag-radar-wrap" aria-hidden="true">
+              <canvas id="ag-radar" width="320" height="320"></canvas>
+            </div>
+            <div class="ag-cat-bars" id="ag-cat-bars" role="list" aria-label="Category scores by dimension"></div>
+          </div>
+        </section>
+
+        <!-- 3. KEY FINDINGS ──────────────────────────── -->
+        <section class="ag-results-section ag-insights-section" aria-label="Key findings">
+          <h2 class="ag-section-h2">Key Findings</h2>
+          <div class="ag-insights-grid">
+
+            <div class="ag-insight-card ag-insight-card--strengths">
+              <div class="ag-insight-card-header">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <h3>Governance Strengths</h3>
+              </div>
+              <div id="ag-strengths"></div>
+            </div>
+
+            <div class="ag-insight-card ag-insight-card--gaps">
+              <div class="ag-insight-card-header">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                <h3>Priority Gaps</h3>
+              </div>
+              <div id="ag-gaps"></div>
+            </div>
+
+            <div class="ag-insight-card ag-insight-card--risks">
+              <div class="ag-insight-card-header">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <h3>Immediate Risk Areas</h3>
+              </div>
+              <div id="ag-risks"></div>
+            </div>
+
+            <div class="ag-insight-card ag-insight-card--peer">
+              <div class="ag-insight-card-header">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.5" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <h3>Peer Benchmark</h3>
+              </div>
+              <div id="ag-peer"></div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 4. 90-DAY ROADMAP ────────────────────────── -->
+        <section class="ag-results-section ag-roadmap-section" aria-label="90-day governance roadmap">
+          <h2 class="ag-section-h2">Your 90-Day Governance Roadmap</h2>
+          <p class="ag-section-sub">Prioritized executive actions drawn from your weakest governance dimensions — aligned to The AI Mandate framework.</p>
+          <div class="ag-roadmap-cols">
+
+            <div class="ag-roadmap-col" id="ag-rm-30">
+              <div class="ag-rm-header">
+                <span class="ag-rm-num">30</span>
+                <span class="ag-rm-unit">DAYS</span>
+              </div>
+              <p class="ag-rm-title"></p>
+              <p class="ag-rm-subtitle"></p>
+              <ul class="ag-rm-list" aria-label="30-day governance actions"></ul>
+            </div>
+
+            <div class="ag-roadmap-col" id="ag-rm-60">
+              <div class="ag-rm-header">
+                <span class="ag-rm-num">60</span>
+                <span class="ag-rm-unit">DAYS</span>
+              </div>
+              <p class="ag-rm-title"></p>
+              <p class="ag-rm-subtitle"></p>
+              <ul class="ag-rm-list" aria-label="60-day governance actions"></ul>
+            </div>
+
+            <div class="ag-roadmap-col" id="ag-rm-90">
+              <div class="ag-rm-header">
+                <span class="ag-rm-num">90</span>
+                <span class="ag-rm-unit">DAYS</span>
+              </div>
+              <p class="ag-rm-title"></p>
+              <p class="ag-rm-subtitle"></p>
+              <ul class="ag-rm-list" aria-label="90-day governance actions"></ul>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 5. NEXT STEPS ────────────────────────────── -->
+        <!-- ── Paid assessment upsell ─────────────────────────── -->
+        <section class="ag-results-section ag-upsell-section" aria-label="Upgrade to paid assessment">
+          <div class="ag-upsell-card">
+            <div class="ag-upsell-left">
+              <div class="ag-upsell-eyebrow">Expert Assessment — $997 CAD</div>
+              <h2 class="ag-upsell-title">Want a deeper executive-level review?</h2>
+              <p class="ag-upsell-desc">Upgrade to the Executive AI Readiness Assessment. Receive a written report, governance analysis, risk findings, and a 90-day roadmap — prepared by QTSI senior advisors.</p>
+              <a href="/paid-assessment" class="ag-upsell-cta">
+                Learn More
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+            <ul class="ag-upsell-includes" aria-label="What's included in the paid assessment">
+              <li>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Expert human analysis by Manav &amp; Sami
+              </li>
+              <li>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                8–12 page written report
+              </li>
+              <li>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                PIPEDA &amp; Quebec Law 25 regulatory analysis
+              </li>
+              <li>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Prioritized 90-day action plan
+              </li>
+              <li>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Executive debrief call included
+              </li>
+              <li>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Delivered in 5–7 business days
+              </li>
+            </ul>
+          </div>
+        </section>
+        <!-- ── /Paid assessment upsell ────────────────────────── -->
+
+        <section class="ag-results-section ag-results-cta-section" aria-label="Next steps">
+          <div class="ag-cta-pair">
+
+            <div class="ag-cta-card ag-cta-card--advisor">
+              <div class="ag-cta-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <h3 class="ag-cta-title">Discuss Results with the AI Advisor</h3>
+              <p class="ag-cta-desc">The QTSI AI Governance Advisor has been briefed on your specific results. Ask about your governance gaps, regulatory exposure, or how to prioritize your roadmap.</p>
+              <button id="ag-open-advisor-btn" class="ag-btn-primary" type="button">
+                Open AI Advisor
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </div>
+
+            <div class="ag-cta-card ag-cta-card--strategy">
+              <div class="ag-cta-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+              <h3 class="ag-cta-title">Book Your Executive AI Governance Review</h3>
+              <p class="ag-cta-desc">60 minutes with Manav Chadha, MBA&thinsp;·&thinsp;CISM&thinsp;·&thinsp;Associate&thinsp;C|CISO&thinsp;·&thinsp;CCEP. Normally valued at $2,500 — offered complimentary to qualified organizations. Pick a time below or open the calendar.</p>
+              <button class="ag-btn-primary" type="button" data-booking="popup" aria-label="Open booking calendar for Executive AI Governance Review">
+                Pick a Time — 60 Minutes
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </div>
+
+          </div>
+
+          <div class="ag-secondary-actions">
+            <button id="ag-pdf-btn" class="ag-pdf-btn" type="button" aria-label="Download assessment results as PDF">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download PDF Report
+            </button>
+            <button id="ag-retake-btn" class="ag-retake-btn" type="button" aria-label="Retake the assessment">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.56"/></svg>
+              Retake Assessment
+            </button>
+          </div>
+
+          
+
+        </section>
+
+      </div><!-- /.ag-results-wrap -->
+
+      <!-- Print-only category breakdown (canvas doesn't print) -->
+      <div class="ag-print-breakdown" id="ag-print-breakdown" aria-hidden="true"></div>
+
+    </section><!-- /#ag-results -->
+
+
+
+  </main><!-- /#main-content -->
+
+
+  <!-- COPILOT WIDGET (shared across all pages) -->
+  <div id="copilot-widget-placeholder"></div>
+
+<!-- Scripts -->
+  <footer class="exec-footer-fallback" style="padding: 2rem; background: #f8fafc; border-top: 1px solid #e2e8f0; font-family: sans-serif; margin-top: var(--sp-24);">
+      <div style="max-width: 1200px; margin: 0 auto; text-align: center; color: #64748b; font-size: 0.875rem;">
+        <p>&copy; 2026 QTSI. All rights reserved.</p>
+      </div>
+  </footer>
+  <script src="/js/assessment.js" defer></script>
+  <script type="module" src="/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </body>
+</html>

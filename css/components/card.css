@@ -1,0 +1,55 @@
+/* Component: Executive Card */
+
+.exec-card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--r-lg);
+  padding: var(--sp-8);
+  transition: all var(--transition-medium);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.exec-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-medium);
+  transform: translateY(-2px);
+}
+
+.exec-card-title {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: var(--sp-3);
+}
+
+.exec-card-body {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+/* Component: Badge / Trust Indicator */
+.exec-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--sp-4);
+}
+
+.exec-badge--primary {
+  background-color: rgba(0, 59, 92, 0.1);
+  color: var(--accent-primary);
+}
+
+.exec-badge--success {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--accent-secondary);
+}
