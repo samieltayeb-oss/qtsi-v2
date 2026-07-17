@@ -27,6 +27,7 @@ This document defines the engineering standards, architectural rules, and launch
   - Text color contrast must be at least `4.5:1`.
   - All interactive controls must support visible focus states (`:focus-visible`).
   - Screen reader attributes (`aria-*` and `alt`) must be fully defined on all images and triggers.
+- **Static Asset Cache-Busting (P0):** To prevent browsers from serving cached versions of modified static files inside the `public/` directory, any update or replacement of a static asset must append a unique version suffix (e.g., `_v2`, `_v3`) to the filename, and all HTML/CSS references must be updated.
 
 ---
 
