@@ -23,7 +23,9 @@ export default defineConfig({
         employers: resolve(__dirname, 'academy/employers.html'),
         partners: resolve(__dirname, 'academy/community-partners.html'),
         startups: resolve(__dirname, 'academy/startups.html'),
-        newcomers: resolve(__dirname, 'academy/newcomers.html')
+        newcomers: resolve(__dirname, 'academy/newcomers.html'),
+        gapanalysis: resolve(__dirname, 'professional-gap-analysis.html'),
+        enterpriseaudit: resolve(__dirname, 'enterprise-audit.html')
       }
     },
     // Enforce performance budget (Warn if bundle exceeds these limits)
