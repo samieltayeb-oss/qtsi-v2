@@ -139,6 +139,9 @@
   .exec-nav-hamburger {
     display: none;
   }
+  .exec-nav-drawer {
+    display: none !important;
+  }
 }
 
 /* Prevent body scrolling when menu or modal is open */
