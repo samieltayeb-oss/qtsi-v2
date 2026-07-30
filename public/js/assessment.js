@@ -49,9 +49,9 @@
     },
   ];
 
-  /* ── Question bank — 25 questions, 5 per category ─────────── */
+  /* ── Question bank — 10 questions (2 per category) ─────────── */
   var QUESTIONS = [
-    /* ── Governance (0–4) ── */
+    /* ── Governance (0–1) ── */
     {
       cat: 'governance',
       text: 'Does your organization have a documented AI Governance Policy approved at the executive or board level?',
@@ -65,7 +65,7 @@
     },
     {
       cat: 'governance',
-      text: 'Is there a designated AI governance owner, committee, or function with a formal mandate?',
+      text: 'Is there a designated AI governance owner, committee, or function with a formal decision-making mandate?',
       answers: [
         'No designated owner — AI governance is handled ad hoc.',
         'Informally assigned to an existing role without a formal mandate.',
@@ -74,43 +74,11 @@
         'An executive-level governance body with board visibility and clear authority.',
       ],
     },
-    {
-      cat: 'governance',
-      text: 'How does your organization manage the inventory of AI systems and models currently in use?',
-      answers: [
-        'No inventory exists — AI tools are adopted without central tracking.',
-        'Informal awareness of some tools, but no formal registry.',
-        'A partial registry exists for major systems only.',
-        'A maintained inventory covers most AI tools with ownership noted.',
-        'A comprehensive registry includes ownership, risk classification, and review cadence.',
-      ],
-    },
-    {
-      cat: 'governance',
-      text: 'How are AI-related risks surfaced and escalated within your governance structure?',
-      answers: [
-        'AI risks are not formally identified or tracked.',
-        'Risks are raised informally on an ad hoc basis.',
-        'Some AI risks are captured in a risk register but rarely reviewed.',
-        'AI risks are formally logged, reviewed, and assigned to owners.',
-        'AI risk management is integrated into the enterprise risk management framework with regular board reporting.',
-      ],
-    },
-    {
-      cat: 'governance',
-      text: 'Does your organization conduct AI impact assessments before deploying new AI systems or making significant changes to existing ones?',
-      answers: [
-        'No impact assessments are conducted.',
-        'Assessments happen occasionally but are not standardized.',
-        'A template exists but is applied inconsistently.',
-        'Structured assessments are conducted before major deployments.',
-        'Mandatory impact assessments with documented outcomes and sign-off for all AI deployments.',
-      ],
-    },
-    /* ── Security (5–9) ── */
+
+    /* ── Security (2–3) ── */
     {
       cat: 'security',
-      text: 'Has your organization assessed the specific security risks introduced by AI systems — such as prompt injection, model inversion, or adversarial inputs?',
+      text: 'Has your organization assessed the specific security risks introduced by AI systems — such as prompt injection, model inversion, shadow AI, or adversarial inputs?',
       answers: [
         'No AI-specific security assessments have been conducted.',
         'Basic awareness exists but no formal assessment has occurred.',
@@ -121,52 +89,20 @@
     },
     {
       cat: 'security',
-      text: 'How does your organization control access to AI systems and the sensitive data they process?',
+      text: 'How does your organization control access to AI systems and protect sensitive data from exposure to external LLM vendors?',
       answers: [
-        'Access to AI systems is not controlled beyond standard IT permissions.',
-        'Basic access controls exist but are not AI-specific.',
-        'Role-based access is applied to most AI systems with some data segregation.',
-        'Formal access control policies govern AI systems with least-privilege enforcement.',
-        'Comprehensive access governance including privileged access management, audit logging, and periodic recertification.',
+        'Access is unmonitored and sensitive data is sent to external LLMs without controls.',
+        'Basic access controls exist but no data redaction or filtering is applied.',
+        'Role-based access is applied with informal guidance against sharing sensitive data.',
+        'Formal access policies and data loss prevention (DLP) controls govern AI tool usage.',
+        'Automated AI proxy / governance platform strips sensitive data before vendor transmission, with full audit logging.',
       ],
     },
-    {
-      cat: 'security',
-      text: 'Are the data pipelines feeding your AI systems protected from unauthorized access, poisoning, or manipulation?',
-      answers: [
-        'Data pipelines have no specific protections beyond general IT security.',
-        'Some pipelines are protected but coverage is inconsistent.',
-        'Key pipelines are protected with basic controls and monitoring.',
-        'Data integrity controls and anomaly detection are applied across major pipelines.',
-        'Full pipeline security program including integrity validation, provenance tracking, and automated anomaly response.',
-      ],
-    },
-    {
-      cat: 'security',
-      text: 'Does your incident response plan cover AI-specific scenarios such as model compromise, biased output deployment, or AI-generated misinformation?',
-      answers: [
-        'Incident response plans do not address AI-specific scenarios.',
-        'AI scenarios are mentioned informally but not formally documented.',
-        'Some AI scenarios are included in existing IR plans.',
-        'AI-specific playbooks exist and have been reviewed by the security team.',
-        'AI IR playbooks are tested, regularly updated, and integrated with broader enterprise crisis management.',
-      ],
-    },
-    {
-      cat: 'security',
-      text: 'How does your organization manage third-party AI tools and vendor-provided AI capabilities from a security perspective?',
-      answers: [
-        'Third-party AI tools are adopted without security review.',
-        'Informal reviews occur but there is no standard process.',
-        'Security reviews are conducted for major tools but not consistently applied.',
-        'A vendor AI security assessment process exists with defined criteria.',
-        'Comprehensive third-party AI governance including contractual security requirements, ongoing monitoring, and right-to-audit provisions.',
-      ],
-    },
-    /* ── Compliance (10–14) ── */
+
+    /* ── Compliance (4–5) ── */
     {
       cat: 'compliance',
-      text: 'Has your organization mapped its AI systems against applicable regulations — such as Canada\'s AIDA, the EU AI Act, PIPEDA/Bill C-27, or sector-specific rules?',
+      text: 'Has your organization mapped its AI systems against applicable frameworks and regulations — such as ISO/IEC 42001, Canada\'s AIDA, the EU AI Act, or NIST AI RMF?',
       answers: [
         'No regulatory mapping has been conducted.',
         'Awareness of regulations exists but no formal mapping has been done.',
@@ -177,49 +113,28 @@
     },
     {
       cat: 'compliance',
-      text: 'Does your organization have processes to ensure AI systems meet data privacy and consent requirements when processing personal information?',
-      answers: [
-        'No specific AI privacy controls beyond general data governance.',
-        'Privacy is considered informally when deploying AI.',
-        'Some AI use cases have privacy assessments but coverage is incomplete.',
-        'Privacy impact assessments are conducted for AI systems that process personal data.',
-        'Privacy-by-design is embedded in the AI development and procurement lifecycle with documented controls.',
-      ],
-    },
-    {
-      cat: 'compliance',
-      text: 'How does your organization address algorithmic transparency and explainability for high-stakes AI decisions?',
-      answers: [
-        'No transparency requirements are applied to AI systems.',
-        'Explainability is considered informally for some high-risk use cases.',
-        'Documentation of model logic exists for some systems.',
-        'Explainability standards are defined and applied to high-stakes AI use cases.',
-        'Formal explainability requirements with stakeholder-facing documentation and audit trails for all consequential AI decisions.',
-      ],
-    },
-    {
-      cat: 'compliance',
-      text: 'Are AI systems that make consequential decisions about individuals (credit, employment, benefits, access) subject to bias testing and fairness review?',
-      answers: [
-        'No bias testing is conducted on AI decision systems.',
-        'Bias is acknowledged as a concern but no formal testing occurs.',
-        'Ad hoc testing has been done on some systems.',
-        'Formal bias testing protocols are applied before deployment of high-stakes systems.',
-        'Continuous fairness monitoring post-deployment with defined remediation processes and documented outcomes.',
-      ],
-    },
-    {
-      cat: 'compliance',
       text: 'Does your organization maintain audit trails sufficient to demonstrate compliance with AI governance requirements to regulators or auditors?',
       answers: [
         'No AI-specific audit trails are maintained.',
         'General system logs exist but are not designed for AI governance audits.',
         'Some AI decisions are logged but coverage and retention are inconsistent.',
         'Structured audit logs are maintained for most AI systems with defined retention.',
-        'Comprehensive, tamper-evident audit trails support regulatory review, with regular completeness checks.',
+        'Comprehensive, automated, tamper-evident audit trails support regulatory and SOC 2 reviews.',
       ],
     },
-    /* ── Operations (15–19) ── */
+
+    /* ── Operations (6–7) ── */
+    {
+      cat: 'operations',
+      text: 'How does your organization manage the inventory and full lifecycle of AI systems, models, and third-party tools currently in use?',
+      answers: [
+        'No inventory exists — AI tools are adopted without central tracking or lifecycle management.',
+        'Informal awareness of some tools, but no central registry.',
+        'A partial registry exists for major systems with basic version tracking.',
+        'A maintained inventory covers most AI tools with defined lifecycle management.',
+        'A comprehensive registry includes ownership, risk classification, automated monitoring, and formal decommissioning.',
+      ],
+    },
     {
       cat: 'operations',
       text: 'Does your organization monitor AI model performance in production — including accuracy, drift, and unexpected output patterns?',
@@ -231,104 +146,28 @@
         'Automated performance monitoring with drift detection, root-cause analysis, and structured remediation workflows.',
       ],
     },
+
+    /* ── Leadership (8–9) ── */
     {
-      cat: 'operations',
-      text: 'How does your organization manage the full lifecycle of AI models — from development and testing through retirement?',
+      cat: 'leadership',
+      text: 'Is AI governance formally recognized as a strategic priority at the executive and board level with dedicated ownership and budget?',
       answers: [
-        'No formal lifecycle management — models are deployed and left running.',
-        'Informal practices exist but there is no standardized process.',
-        'Basic version control and deployment records are maintained.',
-        'A defined model lifecycle process covers development, testing, approval, and deployment.',
-        'Mature MLOps / AI lifecycle management with change control, versioning, performance gates, and formal decommissioning.',
+        'AI governance is not on the executive or board agenda.',
+        'Occasional executive interest but no defined ownership or budget.',
+        'At least one executive has informal responsibility with modest funding.',
+        'A C-suite leader has formal accountability with a defined budget.',
+        'AI governance is a standing executive agenda item with a named C-suite sponsor, dedicated budget, and regular board reporting.',
       ],
     },
     {
-      cat: 'operations',
-      text: 'Are employees who interact with or oversee AI systems adequately trained on those systems\' limitations, risks, and governance requirements?',
+      cat: 'leadership',
+      text: 'Are employees who interact with or oversee AI systems adequately trained on AI risks, acceptable use policies, and governance guidelines?',
       answers: [
         'No AI-specific training is provided to employees.',
         'Informal guidance is shared on an ad hoc basis.',
-        'General AI awareness training is available but not role-specific.',
-        'Role-specific AI training is provided to key personnel with governance obligations.',
-        'Ongoing, mandatory training program covering AI risks, ethics, and governance — with completion tracking and refreshes.',
-      ],
-    },
-    {
-      cat: 'operations',
-      text: 'Does your organization have a process for handling AI-related errors, bias incidents, or harmful outputs reported internally or by customers?',
-      answers: [
-        'No defined process — issues are handled reactively as they arise.',
-        'Issues are logged informally without a structured response.',
-        'A basic process exists for major incidents but is not consistently applied.',
-        'A defined reporting and triage process covers AI-related incidents.',
-        'Formal AI incident management with root-cause analysis, remediation tracking, stakeholder communication, and post-incident review.',
-      ],
-    },
-    {
-      cat: 'operations',
-      text: 'How does your organization evaluate and manage AI vendor and technology dependencies to ensure continuity and avoid lock-in risk?',
-      answers: [
-        'Vendor dependencies are not formally managed.',
-        'Key vendor relationships are tracked but without governance structure.',
-        'Vendor concentration risk is acknowledged and documented for some critical AI tools.',
-        'Formal vendor risk assessments cover AI technology dependencies with continuity planning.',
-        'Proactive vendor diversification strategy with contractual protections, exit provisions, and continuity testing.',
-      ],
-    },
-    /* ── Leadership (20–24) ── */
-    {
-      cat: 'leadership',
-      text: 'Does your C-suite (CEO, CIO, CISO, or equivalent) treat AI governance as a strategic priority with defined ownership?',
-      answers: [
-        'AI governance is not on the executive agenda.',
-        'Occasional executive interest but no defined ownership.',
-        'At least one executive has informal responsibility for AI governance.',
-        'A C-suite leader has formal accountability for AI governance outcomes.',
-        'AI governance is a standing executive agenda item with a named C-suite sponsor and board reporting.',
-      ],
-    },
-    {
-      cat: 'leadership',
-      text: 'Has the board of directors received formal briefings on AI risks, opportunities, and governance obligations within the last 12 months?',
-      answers: [
-        'The board has not received any AI governance briefing.',
-        'AI has been mentioned informally at a board meeting.',
-        'A general AI briefing has been provided but governance was not a focus.',
-        'The board has received a structured briefing covering AI risks and governance responsibilities.',
-        'Regular board-level AI governance reporting with defined KPIs, escalation criteria, and board-approved risk appetite.',
-      ],
-    },
-    {
-      cat: 'leadership',
-      text: 'Does your organization have a dedicated budget or resource allocation for AI governance activities — including compliance, tooling, and staffing?',
-      answers: [
-        'No dedicated budget — AI governance relies on borrowed resources.',
-        'Small ad hoc budget drawn from existing IT or legal funds.',
-        'Modest dedicated budget for basic compliance activities.',
-        'A defined AI governance budget supports key activities with staffing.',
-        'Strategic investment in AI governance with multi-year funding, headcount, and executive sponsorship.',
-      ],
-    },
-    {
-      cat: 'leadership',
-      text: 'Does your organization have a published or internally documented AI Ethics Principles or Responsible AI Framework?',
-      answers: [
-        'No ethics principles or responsible AI framework exists.',
-        'Informal principles are referenced but not documented.',
-        'A framework exists in draft form but has not been formally adopted.',
-        'A documented, approved framework guides AI development and procurement decisions.',
-        'Published responsible AI framework with active enforcement, training integration, and public or stakeholder disclosure.',
-      ],
-    },
-    {
-      cat: 'leadership',
-      text: 'How effectively does your organization communicate its AI governance stance to customers, regulators, partners, and the public?',
-      answers: [
-        'No external communication about AI governance practices.',
-        'Reactive responses only — communicated when asked.',
-        'Some disclosure exists in privacy policies or terms of service.',
-        'Proactive disclosure in annual reports, policies, or dedicated website content.',
-        'Comprehensive, proactive AI transparency program with regular updates, stakeholder engagement, and external assurance.',
+        'Basic AI usage policies exist but formal training is not mandatory.',
+        'Structured AI risk and governance training is provided to key teams.',
+        'Mandatory, role-tailored AI safety & governance training embedded across the organization with regular updates.',
       ],
     },
   ];
@@ -746,23 +585,25 @@
 
   /* ── Scoring ─────────────────────────────────────────────────── */
   function computeTotal() {
-    var total = 0;
+    var raw = 0;
     for (var i = 0; i < QUESTIONS.length; i++) {
-      total += (S.answers[i] !== undefined) ? S.answers[i] : 0;
+      raw += (S.answers[i] !== undefined) ? S.answers[i] : 0;
     }
-    return total;
+    var maxPossible = QUESTIONS.length * 4;
+    return Math.round((raw / maxPossible) * 100);
   }
 
   function computeCategoryScores() {
     var scores = {};
     CATEGORIES.forEach(function (cat) {
       var catQs = QUESTIONS.filter(function (q) { return q.cat === cat.id; });
-      var score = 0;
-      catQs.forEach(function (q, localIdx) {
+      var raw = 0;
+      catQs.forEach(function (q) {
         var globalIdx = QUESTIONS.indexOf(q);
-        score += (S.answers[globalIdx] !== undefined) ? S.answers[globalIdx] : 0;
+        raw += (S.answers[globalIdx] !== undefined) ? S.answers[globalIdx] : 0;
       });
-      scores[cat.id] = score; /* max 20 */
+      var maxCatPossible = catQs.length * 4;
+      scores[cat.id] = Math.round((raw / maxCatPossible) * 20); /* normalized max 20 per category */
     });
     return scores;
   }
