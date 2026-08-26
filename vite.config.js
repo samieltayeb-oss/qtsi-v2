@@ -11,7 +11,6 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         about: resolve(__dirname, 'about.html'),
-        community: resolve(__dirname, 'community.html'),
         academy: resolve(__dirname, 'academy.html'),
         aigovernance: resolve(__dirname, 'ai-governance.html'),
         executiveadvisory: resolve(__dirname, 'executive-advisory.html'),
