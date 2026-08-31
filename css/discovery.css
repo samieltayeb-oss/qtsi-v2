@@ -6,8 +6,8 @@
  .discovery-container {
   max-width: 800px;
   margin: 0 auto;
-  padding: var(--sp-12) var(--sp-6);
-  min-height: 100vh;
+  padding: 100px var(--sp-6) var(--sp-12);
+  min-height: calc(100vh - 100px);
 }
 
 .discovery-header {
