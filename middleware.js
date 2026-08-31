@@ -7,8 +7,6 @@
    Invalid or missing cookie → redirect to /executive/login.
 ═══════════════════════════════════════════════════════════════ */
 
-import { next } from '@vercel/edge';
-
 /* ── Paths that skip authentication ─────────────────────────── */
 const PUBLIC_PATHS = ['/executive/login', '/executive/login.html'];
 const ASSET_EXTS   = ['.css', '.js', '.png', '.webp', '.jpg', '.svg', '.ico'];
@@ -82,7 +80,7 @@ export default async function middleware(request) {
 
   /* Let public paths through without auth */
   if (shouldBypass(pathname)) {
-    return next();
+    return new Response(null, { headers: { 'x-middleware-next': '1' } });
   }
 
   /* Read session cookie */
@@ -110,7 +108,11 @@ export default async function middleware(request) {
   }
 
   /* Authenticated — allow through */
-  const response = next();
+  const response = new Response(null, {
+    headers: {
+      'x-middleware-next': '1'
+    }
+  });
   response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
   response.headers.set('Pragma', 'no-cache');
   response.headers.set('Expires', '0');
