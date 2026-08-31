@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>QTSI Executive Command Center™</title>
+  <meta name="description" content="Confidential authentication portal for the QTSI Executive Command Center." />
+  <link rel="canonical" href="https://www.qtsi.ca/executive/login.html" />
+  <meta property="og:title" content="QTSI Executive Command Center™" />
+  <meta property="og:description" content="Confidential authentication portal for the QTSI Executive Command Center." />
+  <meta property="og:image" content="https://www.qtsi.ca/qtsi-logo.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/executive.css">
+</head>
+<body data-exec-page="login">
+  <div class="exec-login-page">
+    <div class="exec-login-card">
+      <img src="/images/qtsi-logo-web.png" alt="QTSI" class="exec-login-logo">
+      <h1 class="exec-login-title">Executive Command Center<span style="font-size:0.6em">™</span></h1>
+      <div class="exec-login-subtitle">
+        <span>CONFIDENTIAL</span>
+        <span>Authorized Personnel Only</span>
+      </div>
+      <form id="exec-login-form" class="exec-login-form">
+        <div class="exec-login-field-wrapper">
+          <input type="password" id="exec-password" class="exec-login-field" placeholder="Enter Access Code" autocomplete="off" required>
+          <button type="button" class="exec-login-toggle" aria-label="Toggle password visibility">👁</button>
+        </div>
+        <div id="exec-login-error" class="exec-login-error" hidden>Access Denied</div>
+        <button type="submit" id="exec-login-btn" class="exec-login-btn">
+          <span class="exec-login-btn-text">Authenticate</span>
+          <span class="exec-login-btn-loader" hidden>Verifying...</span>
+        </button>
+      </form>
+      <p class="exec-login-notice">Unauthorized access attempts are logged and monitored.</p>
+    </div>
+  </div>
+  <script src="/js/executive.js"></script>
+</body>
+</html>

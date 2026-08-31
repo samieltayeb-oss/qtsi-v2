@@ -1,0 +1,223 @@
+/* 
+   QTSI Master Executive Document Design System 
+   Optimized for "Print to PDF" & Browser Viewing
+   Emulates Tier-1 Consulting (Deloitte, McKinsey, KPMG)
+*/
+
+/* --- Print & Page Specifications --- */
+@page {
+  size: A4;
+  margin: 20mm 15mm 20mm 15mm;
+  @bottom-right {
+    content: "Page " counter(page);
+    font-family: 'Inter', sans-serif;
+    font-size: 8pt;
+    color: #666;
+  }
+  @bottom-left {
+    content: "QTSI Executive Briefing | Strictly Confidential";
+    font-family: 'Inter', sans-serif;
+    font-size: 8pt;
+    color: #666;
+  }
+}
+
+/* --- Presentation Landscape Specifications --- */
+@page presentation {
+  size: 16in 9in; /* 16:9 ratio */
+  margin: 15mm;
+}
+
+/* --- Base Body Overrides for Documents --- */
+body.exec-doc {
+  background-color: var(--dark-bg, #0A0A0F);
+  color: var(--text-primary, #E0E0E0);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+/* Constrain width for browser viewing to match A4 proportions */
+body.exec-doc .document-wrapper {
+  max-width: 210mm; /* A4 width */
+  margin: 0 auto;
+  background-color: #0A0A0F;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+body.exec-presentation .document-wrapper {
+  max-width: 16in;
+  margin: 0 auto;
+}
+
+/* --- Page Structure --- */
+.page {
+  position: relative;
+  box-sizing: border-box;
+  padding: 15mm 20mm;
+  page-break-after: always;
+  min-height: 297mm; /* A4 height */
+  display: flex;
+  flex-direction: column;
+}
+
+body.exec-presentation .page {
+  min-height: 9in;
+  padding: 40px 60px;
+}
+
+/* Remove min-height and shadows when printing */
+@media print {
+  body.exec-doc { background: white !important; color: black !important; }
+  body.exec-doc .document-wrapper { box-shadow: none; max-width: none; margin: 0; background: white !important; }
+  .page { min-height: auto; padding: 0; page-break-after: always; }
+  .no-print { display: none !important; }
+  
+  /* Auto color inversion for print to save ink but keep it premium */
+  h1, h2, h3, h4, h5, p, li { color: black !important; }
+  .text-muted { color: #555 !important; }
+  .exec-accent-bar { background: var(--blue, #0070F3) !important; }
+}
+
+/* --- Cover Page Styling --- */
+.cover-page {
+  justify-content: center;
+  align-items: flex-start;
+  border-left: 8px solid var(--blue, #0070F3);
+  padding-left: 30px;
+  background: radial-gradient(circle at 100% 100%, rgba(0, 112, 243, 0.05), transparent 50%);
+}
+
+.cover-logo {
+  width: 180px;
+  margin-bottom: 4rem;
+}
+
+.cover-meta {
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  color: var(--blue, #0070F3);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.cover-title {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.cover-subtitle {
+  font-size: 1.5rem;
+  color: var(--text-muted, #888);
+  font-weight: 400;
+  max-width: 80%;
+  margin-bottom: 4rem;
+}
+
+.cover-footer {
+  margin-top: auto;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-muted, #888);
+}
+@media print {
+  .cover-footer { border-top-color: #CCC; }
+}
+
+/* --- Typography & Elements --- */
+h1.doc-title { font-size: 2.2rem; margin-bottom: 0.5rem; font-weight: 700; }
+h2.section-title { 
+  font-size: 1.6rem; 
+  color: var(--blue, #0070F3); 
+  border-bottom: 1px solid rgba(255,255,255,0.1); 
+  padding-bottom: 0.5rem; 
+  margin-top: 2rem; 
+  margin-bottom: 1.5rem; 
+}
+h3.subsection-title { font-size: 1.25rem; font-weight: 600; margin-top: 1.5rem; }
+
+.exec-summary-box {
+  background: rgba(255,255,255,0.03);
+  border-left: 4px solid var(--blue, #0070F3);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+/* --- Professional Tables --- */
+table.exec-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.9rem;
+}
+table.exec-table th {
+  background: rgba(255,255,255,0.05);
+  color: white;
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 15px;
+  border-bottom: 2px solid var(--blue, #0070F3);
+}
+table.exec-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+@media print {
+  table.exec-table th { background: #F5F5F5 !important; border-bottom: 2px solid black; }
+  table.exec-table td { border-bottom: 1px solid #CCC; }
+}
+
+/* --- ROI / Value Highlights --- */
+.roi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+.roi-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+.roi-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--green, #5DB937);
+  margin-bottom: 0.5rem;
+}
+.roi-label {
+  font-size: 0.85rem;
+  color: var(--text-muted, #888);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+@media print {
+  .roi-card { border: 1px solid #CCC; }
+}
+
+/* --- Callout Badges --- */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-right: 0.5rem;
+}
+.badge-risk { background: rgba(255, 68, 68, 0.15); color: #FF4444; border: 1px solid rgba(255, 68, 68, 0.3); }
+.badge-finance { background: rgba(93, 185, 55, 0.15); color: #5DB937; border: 1px solid rgba(93, 185, 55, 0.3); }
+.badge-compliance { background: rgba(245, 166, 35, 0.15); color: #F5A623; border: 1px solid rgba(245, 166, 35, 0.3); }

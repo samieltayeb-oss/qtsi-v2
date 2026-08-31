@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>QTSI Founder Discovery Package™</title>
+  <meta name="description" content="Confidential Founder Discovery Package & Funding Brief Generator for QTSI." />
+  <link rel="canonical" href="https://www.qtsi.ca/executive/discovery.html" />
+  <meta property="og:title" content="QTSI Founder Discovery Package™" />
+  <meta property="og:description" content="Confidential Founder Discovery Package & Funding Brief Generator for QTSI." />
+  <meta property="og:image" content="https://www.qtsi.ca/qtsi-logo.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/executive.css">
+  <link rel="stylesheet" href="/css/discovery.css">
+</head>
+<body data-exec-page="discovery">
+  <!-- Top Bar -->
+  <header class="exec-topbar">
+    <div class="exec-topbar-left" style="display: flex; align-items: center; gap: var(--sp-4);">
+      <a href="/executive/index.html"><img src="/images/qtsi-logo-web.png" alt="QTSI" class="exec-topbar-logo"></a>
+      <div style="display: flex; flex-direction: column;">
+        <span style="color: var(--text-primary); font-size: var(--text-sm); font-weight: 700;">Growth Capital Command Center™</span>
+        <span style="color: var(--text-muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;">Founder Discovery Package</span>
+      </div>
+    </div>
+    <a href="/executive/index.html" class="exec-topbar-logout">Exit to Command Center</a>
+  </header>
+
+  <div class="discovery-container">
+    
+    <!-- Questionnaire View -->
+    <div id="questionnaire-view">
+      <div class="discovery-header">
+        <h1 class="discovery-title">Founder Discovery Package™</h1>
+        <div class="discovery-subtitle">Internal Funding Readiness Assessment</div>
+      </div>
+
+      <div class="discovery-progress-wrapper">
+        <div class="discovery-progress-text">
+          <span id="progress-text">Section 1 of 12</span>
+          <span id="autosave-status" style="color: var(--green);">Ready</span>
+        </div>
+        <div class="discovery-progress-track">
+          <div class="discovery-progress-fill" id="progress-fill" style="width: 8%;"></div>
+        </div>
+      </div>
+
+      <form id="discovery-form">
+        
+        <!-- Section 1 -->
+        <div class="discovery-step active" data-step="1">
+          <h2 class="step-title">Section 1 — Founder Vision</h2>
+          <p class="step-desc">Establish the core narrative driving the company. This forms the foundation for all government grant introductions.</p>
+          
+          <div class="form-group">
+            <label class="form-label">What is the biggest problem QTSI is solving right now?</label>
+            <textarea class="form-textarea" name="q1_problem" placeholder="Example: There is a massive disconnect between academic cybersecurity training and what employers actually demand..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Why does QTSI exist, and why now?</label>
+            <textarea class="form-textarea" name="q1_why" placeholder="Explain the urgency..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">What is your long-term ambition for the company (3–5 years)?</label>
+            <textarea class="form-textarea" name="q1_ambition" placeholder="E.g., Become the national standard for cybersecurity workforce placement..."></textarea>
+          </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="discovery-step" data-step="2">
+          <h2 class="step-title">Section 2 — Product & Innovation</h2>
+          <p class="step-desc">Critical for determining eligibility for technology-focused innovation programs like NRC IRAP.</p>
+          
+          <div class="form-group">
+            <label class="form-label">What exactly is QTSI building?</label>
+            <textarea class="form-textarea" name="q2_building" placeholder="Describe the product or program..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Is QTSI developing proprietary software or IP? (If yes, describe it)</label>
+            <textarea class="form-textarea" name="q2_ip" placeholder="E.g., We are building an AI-matching engine that scores candidates against employer requirements..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">What differentiates QTSI from competitors?</label>
+            <textarea class="form-textarea" name="q2_diff" placeholder="Your unfair advantage..."></textarea>
+          </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="discovery-step" data-step="3">
+          <h2 class="step-title">Section 3 — Workforce Innovation</h2>
+          <p class="step-desc">Define the operational mechanics of the bridging program for CAJG and PrairiesCan funding.</p>
+          
+          <div class="form-group">
+            <label class="form-label">Who are the target learners?</label>
+            <input type="text" class="form-input" name="q3_learners" placeholder="E.g., Recent immigrants, college graduates...">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Who are the target employers?</label>
+            <input type="text" class="form-input" name="q3_employers" placeholder="E.g., Enterprise IT departments in Alberta...">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Describe the curriculum delivery model.</label>
+            <textarea class="form-textarea" name="q3_delivery" placeholder="E.g., 12-week hybrid program with guaranteed practicum..."></textarea>
+          </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="discovery-step" data-step="4">
+          <h2 class="step-title">Section 4 — Market Validation</h2>
+          <p class="step-desc">Funders require proof of traction before writing a cheque. Detail your validation efforts.</p>
+          
+          <div class="form-group">
+            <label class="form-label">What evidence do you have that employers want this?</label>
+            <textarea class="form-textarea" name="q4_evidence" placeholder="E.g., We have spoken to 10 CISOs who confirmed the skills gap..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Do you have any committed Pilot Employers?</label>
+            <textarea class="form-textarea" name="q4_pilots" placeholder="List companies or describe the pipeline..."></textarea>
+          </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="discovery-step" data-step="5">
+          <h2 class="step-title">Section 5 — Commercialization</h2>
+          <p class="step-desc">How does the business make money? This feeds directly into the Commercialization Plan artifact.</p>
+          
+          <div class="form-group">
+            <label class="form-label">Describe your Revenue Model and Pricing Strategy.</label>
+            <textarea class="form-textarea" name="q5_revenue" placeholder="E.g., B2B employer placement fee of $5,000 per hire..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">What is the Go-To-Market strategy for acquiring the first 5 customers?</label>
+            <textarea class="form-textarea" name="q5_gtm" placeholder="E.g., Direct outreach to CISO network..."></textarea>
+          </div>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="discovery-step" data-step="6">
+          <h2 class="step-title">Section 6 — Financial Planning</h2>
+          <p class="step-desc">Provides context for BDC loans and scale-up grants. Do not include sensitive banking details.</p>
+          
+          <div class="form-group">
+            <label class="form-label">Estimated current annual revenue trajectory:</label>
+            <select class="form-select" name="q6_revenue">
+              <option value="Pre-revenue">Pre-revenue</option>
+              <option value="Under $100k">Under $100k</option>
+              <option value="$100k - $500k">$100k - $500k</option>
+              <option value="Over $500k">Over $500k</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">If QTSI secured $100k in funding today, what would be the primary Use of Funds?</label>
+            <textarea class="form-textarea" name="q6_use_funds" placeholder="E.g., 50% hiring a lead instructor, 30% curriculum dev, 20% marketing..."></textarea>
+          </div>
+        </div>
+
+        <!-- Section 7 -->
+        <div class="discovery-step" data-step="7">
+          <h2 class="step-title">Section 7 — Team</h2>
+          <p class="step-desc">Funders bet on the team as much as the product.</p>
+          
+          <div class="form-group">
+            <label class="form-label">Who are the key leaders and what is their unfair advantage?</label>
+            <textarea class="form-textarea" name="q7_team" placeholder="Provide a brief summary of founder/leadership expertise..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">What key hires are needed in the next 12 months?</label>
+            <input type="text" class="form-input" name="q7_hires" placeholder="E.g., CTO, VP of Sales, Lead Instructor...">
+          </div>
+        </div>
+
+        <!-- Section 8 -->
+        <div class="discovery-step" data-step="8">
+          <h2 class="step-title">Section 8 — Regulatory Planning</h2>
+          <p class="step-desc">Mitigating compliance risk is critical for institutional funding credibility.</p>
+          
+          <div class="form-group">
+            <label class="form-label">What is the current status regarding Private Career College (PCC) compliance?</label>
+            <textarea class="form-textarea" name="q8_regulatory" placeholder="E.g., We are seeking an exemption based on B2B delivery model..."></textarea>
+          </div>
+        </div>
+
+        <!-- Section 9 -->
+        <div class="discovery-step" data-step="9">
+          <h2 class="step-title">Section 9 — Funding Goals</h2>
+          <p class="step-desc">Define the exact capital requirements to guide program matching.</p>
+          
+          <div class="form-group">
+            <label class="form-label">How much total capital is required for the next 18 months of growth?</label>
+            <input type="text" class="form-input" name="q9_capital" placeholder="E.g., $250,000">
+          </div>
+          <div class="form-group">
+            <label class="form-label">What is the preferred funding mix?</label>
+            <textarea class="form-textarea" name="q9_mix" placeholder="E.g., 80% non-dilutive grants, 20% BDC debt. No equity yet..."></textarea>
+          </div>
+        </div>
+
+        <!-- Section 10 -->
+        <div class="discovery-step" data-step="10">
+          <h2 class="step-title">Section 10 — Existing Assets</h2>
+          <p class="step-desc">Indicate the current status of your core execution assets. The system will use this to generate your missing evidence checklist.</p>
+          
+          <div class="asset-row">
+            <span class="asset-name">Business Plan</span>
+            <select class="asset-status-select" name="asset_business_plan">
+              <option value="Not Started">Not Started</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </div>
+          <div class="asset-row">
+            <span class="asset-name">Pitch Deck</span>
+            <select class="asset-status-select" name="asset_pitch_deck">
+              <option value="Not Started">Not Started</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </div>
+          <div class="asset-row">
+            <span class="asset-name">3-Year Financial Model</span>
+            <select class="asset-status-select" name="asset_financial_model">
+              <option value="Not Started">Not Started</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </div>
+          <div class="asset-row">
+            <span class="asset-name">Curriculum Outline</span>
+            <select class="asset-status-select" name="asset_curriculum">
+              <option value="Not Started">Not Started</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </div>
+          <div class="asset-row">
+            <span class="asset-name">Employer Letters of Intent (LOIs)</span>
+            <select class="asset-status-select" name="asset_loi">
+              <option value="Not Started">Not Started</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </div>
+          <div class="asset-row">
+            <span class="asset-name">Industry Advisory Board</span>
+            <select class="asset-status-select" name="asset_advisory">
+              <option value="Not Started">Not Started</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Section 11 -->
+        <div class="discovery-step" data-step="11">
+          <h2 class="step-title">Section 11 — Executive Strategic Review</h2>
+          <p class="step-desc">Final strategic alignment questions to solidify the funding narrative.</p>
+          
+          <div class="form-group">
+            <label class="form-label">What milestone would make you personally consider QTSI successful within the next 24 months?</label>
+            <textarea class="form-textarea" name="q11_milestone" placeholder="..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">What is currently preventing QTSI from reaching that milestone?</label>
+            <textarea class="form-textarea" name="q11_preventing" placeholder="..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">If a funding reviewer remembered only one thing about QTSI, what should it be?</label>
+            <textarea class="form-textarea" name="q11_remember" placeholder="..."></textarea>
+          </div>
+        </div>
+
+        <!-- Section 12: Declaration -->
+        <div class="discovery-step" data-step="12">
+          <h2 class="step-title">Founder Declaration</h2>
+          <p class="step-desc">Finalize your discovery package to generate the Executive Brief.</p>
+          
+          <div class="declaration-wrapper">
+            <label class="declaration-label">
+              <input type="checkbox" id="founder-declaration-checkbox" class="declaration-checkbox">
+              <span class="declaration-text">
+                <strong>I, Manav Chadha, confirm that the information provided is accurate</strong> to the best of my knowledge and represents the current state of QTSI. I understand this information will be used as the authoritative source of truth for generating future funding applications and commercialization strategies.
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <div class="discovery-nav">
+          <button type="button" class="btn-secondary" id="btn-prev" style="visibility: hidden;">Previous</button>
+          <button type="button" class="btn-primary" id="btn-next">Continue</button>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- Results View (SMART OUTPUT) -->
+    <div id="results-view">
+      <div class="results-header">
+        <h2 class="discovery-title">Funding Readiness Report</h2>
+        <div class="discovery-subtitle">Internal Planning Assessment</div>
+      </div>
+
+      <div class="report-grid">
+        <!-- Scorecard Card -->
+        <div class="report-card">
+          <div class="report-card-title">Current Readiness Scores</div>
+          <div class="score-row"><span>Founder</span> <span id="res-score-founder">0%</span></div>
+          <div class="score-row"><span>Product</span> <span id="res-score-product">0%</span></div>
+          <div class="score-row"><span>Commercialization</span> <span id="res-score-comm">0%</span></div>
+          <div class="score-row"><span>Financial</span> <span id="res-score-fin">0%</span></div>
+          <div class="score-row"><span>Evidence</span> <span id="res-score-evid">0%</span></div>
+          <div class="score-overall">Overall: <span id="res-score-overall">0%</span></div>
+        </div>
+
+        <!-- Priority Actions Card -->
+        <div class="report-card">
+          <div class="report-card-title">Strategic Gap Analysis</div>
+          <div class="priority-highlight">
+            <div class="priority-highlight-label">Highest Priority Action</div>
+            <div class="priority-highlight-value" id="res-highest-priority">Obtain Employer LOIs</div>
+          </div>
+          <div style="margin-top: var(--sp-4);">
+            <div style="font-size: var(--text-xs); color: var(--text-secondary); text-transform: uppercase; margin-bottom: 8px;">Missing Evidence:</div>
+            <ul class="playbook-list" id="res-missing-evidence">
+              <!-- JS Populated -->
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Generated Executive Brief -->
+      <div class="report-card" style="margin-bottom: var(--sp-8);">
+        <h2 style="font-size: var(--text-xl); font-weight: 800; color: var(--text-primary); margin-bottom: var(--sp-6); text-align: center;">Executive Funding Brief</h2>
+        
+        <div class="executive-brief-section">
+          <div class="report-card-title">Company Vision</div>
+          <div class="executive-brief-content" id="brief-vision"></div>
+        </div>
+        
+        <div class="executive-brief-section">
+          <div class="report-card-title">Innovation Summary</div>
+          <div class="executive-brief-content" id="brief-innovation"></div>
+        </div>
+
+        <div class="executive-brief-section">
+          <div class="report-card-title">Commercialization & Market</div>
+          <div class="executive-brief-content" id="brief-market"></div>
+        </div>
+
+        <div class="executive-brief-section">
+          <div class="report-card-title">Funding Objectives</div>
+          <div class="executive-brief-content" id="brief-funding"></div>
+        </div>
+      </div>
+
+      <div class="action-bar">
+        <a href="/executive/index.html" class="btn-secondary">Return to Command Center</a>
+        <button type="button" class="btn-primary" onclick="window.print()">Print Founder Package (PDF)</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="autosave-toast" id="autosave-toast">Draft saved automatically.</div>
+
+  <footer class="exec-footer">
+    <span>&copy; 2026 QTSI. All Rights Reserved.</span>
+    <span>Confidential Executive Growth Capital Command Center™</span>
+    <span>Internal Use Only.</span>
+  </footer>
+
+  <script src="/js/discovery.js"></script>
+</body>
+</html>
