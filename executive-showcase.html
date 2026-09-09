@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QTSI Executive Branding & All-in-One IT Showcase | Manav Chadha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-void: #05070B;
+      --bg-base: #0A0E17;
+      --bg-surface: #101726;
+      --bg-surface-elevated: #162033;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-bright: rgba(0, 163, 255, 0.3);
+      --qtsi-blue: #0070F3;
+      --qtsi-green: #10B981;
+      --qtsi-navy: #003B5C;
+      --text-primary: #F8FAFC;
+      --text-secondary: #94A3B8;
+      --text-muted: #64748B;
+      --grad-brand: linear-gradient(135deg, #0070F3 0%, #10B981 100%);
+      --grad-dark: linear-gradient(180deg, #0A0E17 0%, #05070B 100%);
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-void);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Background Mesh */
+    .ambient-glow {
+      position: fixed;
+      top: -20%;
+      left: 20%;
+      width: 60vw;
+      height: 60vw;
+      background: radial-gradient(circle, rgba(0, 112, 243, 0.07) 0%, rgba(16, 185, 129, 0.04) 40%, transparent 70%);
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Executive Top Bar */
+    header.exec-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      background: rgba(10, 14, 23, 0.92);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .brand-logo {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+    }
+    .brand-meta h1 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .brand-meta span {
+      font-size: 0.75rem;
+      color: var(--qtsi-green);
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+    .brand-meta p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .exec-nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.15rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+      font-family: var(--font-sans);
+    }
+    .btn-primary {
+      background: var(--grad-brand);
+      color: #fff;
+      box-shadow: 0 4px 18px rgba(0, 112, 243, 0.25);
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(16, 185, 129, 0.35);
+    }
+    .btn-secondary {
+      background: var(--bg-surface);
+      color: var(--text-primary);
+      border: 1px solid var(--border-subtle);
+    }
+    .btn-secondary:hover {
+      background: var(--bg-surface-elevated);
+      border-color: var(--border-bright);
+    }
+    .btn-recommend {
+      background: linear-gradient(135deg, #0070F3 0%, #10B981 100%);
+      color: #fff;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(0, 112, 243, 0.4);
+    }
+    .btn-recommend:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(16, 185, 129, 0.5);
+    }
+
+    /* Tab Switcher */
+    .tab-bar-container {
+      background: var(--bg-base);
+      border-bottom: 1px solid var(--border-subtle);
+      position: sticky;
+      top: 73px;
+      z-index: 90;
+      padding: 0.5rem 2rem;
+      overflow-x: auto;
+    }
+    .tab-bar {
+      display: flex;
+      gap: 0.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .tab-btn {
+      padding: 0.65rem 1.1rem;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+    .tab-btn:hover {
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .tab-btn.active {
+      color: #fff;
+      background: var(--bg-surface-elevated);
+      border-color: var(--border-bright);
+      box-shadow: 0 0 16px rgba(0, 112, 243, 0.2);
+    }
+
+    /* Main Container */
+    main.content-wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Section Header */
+    .section-header { margin-bottom: 2rem; }
+    .badge-pill {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--qtsi-blue);
+      background: rgba(0, 112, 243, 0.1);
+      border: 1px solid rgba(0, 112, 243, 0.25);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 900px;
+    }
+
+    /* Executive Briefing Banner */
+    .playbook-banner {
+      background: linear-gradient(135deg, rgba(0, 112, 243, 0.1) 0%, rgba(16, 185, 129, 0.08) 100%);
+      border: 1px solid rgba(0, 163, 255, 0.25);
+      border-radius: 14px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .playbook-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+    }
+    .playbook-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      max-width: 750px;
+    }
+
+    /* Cards Grid */
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+    }
+    .showcase-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .showcase-card:hover {
+      border-color: var(--border-bright);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+    }
+    .showcase-card.recommended-card {
+      border: 2px solid var(--qtsi-blue);
+      box-shadow: 0 0 30px rgba(0, 112, 243, 0.25);
+      background: linear-gradient(180deg, rgba(16, 23, 38, 0.95) 0%, rgba(10, 14, 23, 0.98) 100%);
+    }
+    .recommended-banner-tag {
+      background: linear-gradient(90deg, #0070F3 0%, #10B981 100%);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 6px 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .card-image-wrap {
+      position: relative;
+      background: #000;
+      overflow: hidden;
+      aspect-ratio: 3/2;
+    }
+    .card-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .showcase-card:hover .card-image-wrap img {
+      transform: scale(1.03);
+    }
+    .card-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(10, 14, 23, 0.88);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-subtle);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .card-body {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .card-spec {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
+    }
+    .card-meta-list {
+      list-style: none;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .card-meta-list li {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .card-meta-list li::before {
+      content: "•";
+      color: var(--qtsi-green);
+      font-weight: bold;
+    }
+
+    /* Recommended Choice Callout */
+    .rec-box {
+      background: rgba(0, 112, 243, 0.08);
+      border: 1px solid rgba(0, 112, 243, 0.3);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1.2rem;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      color: #E2E8F0;
+    }
+    .rec-box strong { color: #38BDF8; }
+
+    /* 3D Interactive Card Stage with Ultra-Sharp Contrast */
+    .interactive-stage {
+      background: linear-gradient(180deg, #0F172A 0%, #060A14 100%);
+      border: 1px solid rgba(0, 163, 255, 0.3);
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      margin-top: 2rem;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+      transition: all 0.4s ease;
+    }
+    .stage-highlight-pulse {
+      box-shadow: 0 0 50px rgba(0, 112, 243, 0.6), inset 0 0 20px rgba(16, 185, 129, 0.2);
+      border-color: #10B981;
+    }
+    .stage-title {
+      font-size: 1.55rem;
+      font-weight: 800;
+      margin-bottom: 0.4rem;
+    }
+    .stage-sub {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      margin-bottom: 1.8rem;
+    }
+
+    /* Style Switcher Pills */
+    .style-picker-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .style-chip {
+      padding: 8px 16px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      border-radius: 999px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .style-chip:hover {
+      color: #fff;
+      border-color: var(--qtsi-blue);
+      background: rgba(0, 112, 243, 0.1);
+    }
+    .style-chip.active {
+      background: var(--qtsi-blue);
+      color: #fff;
+      border-color: var(--qtsi-blue);
+      box-shadow: 0 0 16px rgba(0, 112, 243, 0.45);
+    }
+    .style-chip.recommended-chip.active {
+      background: linear-gradient(135deg, #0070F3 0%, #10B981 100%);
+      border-color: #10B981;
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+    }
+
+    /* 3D Card Wrapper */
+    .card-3d-wrapper {
+      perspective: 1400px;
+      width: 530px;
+      max-width: 100%;
+      height: 310px;
+      margin: 0 auto 2rem;
+      position: relative;
+    }
+    .card-3d-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* Card Faces Base */
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 16px;
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: left;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.85), 0 0 30px rgba(0, 112, 243, 0.15);
+      transition: all 0.3s ease;
+    }
+    .face-back {
+      transform: rotateY(180deg);
+    }
+
+    /* Light Sheen Overlay */
+    .card-face::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent 42%, rgba(255, 255, 255, 0.08) 50%, transparent 58%);
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    /* ========================================================
+       BULLETPROOF HIGH-CONTRAST CSS THEMES FOR 3D SIMULATOR
+       ======================================================== */
+
+    /* THEME 01: OBSIDIAN ANODIZED METAL */
+    .theme-obsidian .face-front {
+      background: radial-gradient(circle at 30% 20%, #172133 0%, #0B111D 60%, #04070D 100%);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-left: 7px solid #10B981;
+    }
+    .theme-obsidian .face-front .card-name { color: #FFFFFF; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+    .theme-obsidian .face-front .card-title-text { color: #38BDF8; }
+    .theme-obsidian .face-front .card-cred-text { color: #34D399; }
+    .theme-obsidian .face-front .card-contact-row { color: #F1F5F9; border-top: 1px solid rgba(255, 255, 255, 0.15); }
+    .theme-obsidian .face-front .nfc-badge { background: rgba(16,185,129,0.15); color: #10B981; border: 1px solid rgba(16,185,129,0.4); }
+
+    .theme-obsidian .face-back {
+      background: radial-gradient(circle at 40% 30%, #121A2A 0%, #080D17 70%, #020409 100%);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-right: 7px solid #0070F3;
+    }
+    .theme-obsidian .face-back .back-header { color: #FFFFFF; }
+    .theme-obsidian .face-back .back-location { color: #38BDF8; }
+    .theme-obsidian .face-back .back-tagline { color: #10B981; }
+    .theme-obsidian .face-back .back-pillars { color: #F1F5F9; }
+    .theme-obsidian .face-back .back-qr-box { background: #0E1726; border: 1px solid rgba(0,112,243,0.35); color: #38BDF8; }
+    .theme-obsidian .face-back .back-qr-box .qr-sub { color: #94A3B8; }
+
+    /* THEME 02: INSTITUTIONAL PEARL & NAVY (GUARANTEED 15:1 CONTRAST) */
+    .theme-pearl .face-front {
+      background: radial-gradient(circle at 50% 0%, #FFFFFF 0%, #F5F7FA 70%, #EAEEF3 100%);
+      border: 1px solid #CBD5E1;
+      border-left: 7px solid #003B5C;
+      box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.5), inset 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .theme-pearl .face-front .card-name { color: #002D47; text-shadow: none; font-weight: 800; }
+    .theme-pearl .face-front .card-title-text { color: #003B5C; font-weight: 700; }
+    .theme-pearl .face-front .card-cred-text { color: #0284C7; font-weight: 700; }
+    .theme-pearl .face-front .card-contact-row { color: #0F172A; border-top: 1px solid #CBD5E1; font-weight: 700; }
+    .theme-pearl .face-front .nfc-badge { background: rgba(0, 59, 92, 0.08); color: #003B5C; border: 1px solid rgba(0, 59, 92, 0.3); }
+
+    .theme-pearl .face-back {
+      background: radial-gradient(circle at 50% 0%, #FFFFFF 0%, #F8FAFC 70%, #E2E8F0 100%);
+      border: 1px solid #CBD5E1;
+      border-right: 7px solid #003B5C;
+      box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.5);
+    }
+    .theme-pearl .face-back .back-header { color: #002D47; font-weight: 800; }
+    .theme-pearl .face-back .back-location { color: #0284C7; font-weight: 700; }
+    .theme-pearl .face-back .back-tagline { color: #004875; font-weight: 800; }
+    .theme-pearl .face-back .back-pillars { color: #0F172A; font-weight: 600; line-height: 1.55; }
+    .theme-pearl .face-back .back-pillars strong { color: #002D47; }
+    .theme-pearl .face-back .back-qr-box { background: #EBF2F7; border: 1px solid #94A3B8; color: #003B5C; }
+    .theme-pearl .face-back .back-qr-box .qr-sub { color: #475569; }
+
+    /* THEME 03: SLATE ALL-IN-ONE IT & HARDWARE (⭐ RECOMMENDED CHOICE) */
+    .theme-slate .face-front {
+      background: radial-gradient(circle at 35% 20%, #2A3A52 0%, #162032 60%, #0B111C 100%);
+      border: 1px solid rgba(0, 163, 255, 0.35);
+      border-left: 7px solid #0070F3;
+      box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.85), 0 0 25px rgba(0, 112, 243, 0.25);
+    }
+    .theme-slate .face-front .card-name { color: #FFFFFF; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+    .theme-slate .face-front .card-title-text { color: #10B981; font-weight: 800; }
+    .theme-slate .face-front .card-cred-text { color: #93C5FD; font-weight: 600; }
+    .theme-slate .face-front .card-contact-row { color: #F8FAFC; border-top: 1px solid rgba(255, 255, 255, 0.18); }
+    .theme-slate .face-front .nfc-badge { background: rgba(0, 112, 243, 0.2); color: #38BDF8; border: 1px solid #0070F3; }
+
+    .theme-slate .face-back {
+      background: radial-gradient(circle at 40% 30%, #182338 0%, #0D1524 70%, #050810 100%);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-right: 7px solid #10B981;
+    }
+    .theme-slate .face-back .back-header { color: #FFFFFF; font-weight: 800; }
+    .theme-slate .face-back .back-location { color: #38BDF8; font-weight: 700; }
+    .theme-slate .face-back .back-tagline { color: #38BDF8; font-weight: 800; }
+    .theme-slate .face-back .back-pillars { color: #F1F5F9; font-weight: 500; line-height: 1.55; }
+    .theme-slate .face-back .back-pillars strong { color: #34D399; }
+    .theme-slate .face-back .back-qr-box { background: #131E31; border: 1px solid #10B981; color: #10B981; }
+    .theme-slate .face-back .back-qr-box .qr-sub { color: #94A3B8; }
+
+    /* THEME 04: FROSTED TRANSLUCENT ACRYLIC */
+    .theme-frosted .face-front {
+      background: linear-gradient(135deg, rgba(30, 45, 69, 0.88) 0%, rgba(12, 20, 35, 0.94) 100%);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 229, 255, 0.4);
+      border-left: 7px solid #00E5FF;
+      box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.85), 0 0 25px rgba(0, 229, 255, 0.2);
+    }
+    .theme-frosted .face-front .card-name { color: #FFFFFF; text-shadow: 0 0 15px rgba(0,229,255,0.4); }
+    .theme-frosted .face-front .card-title-text { color: #00E5FF; }
+    .theme-frosted .face-front .card-cred-text { color: #4ADE80; }
+    .theme-frosted .face-front .card-contact-row { color: #F8FAFC; border-top: 1px solid rgba(0,229,255,0.25); }
+    .theme-frosted .face-front .nfc-badge { background: rgba(0,229,255,0.15); color: #00E5FF; border: 1px solid rgba(0,229,255,0.4); }
+
+    .theme-frosted .face-back {
+      background: linear-gradient(135deg, rgba(16, 26, 44, 0.9) 0%, rgba(6, 12, 22, 0.95) 100%);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 229, 255, 0.4);
+      border-right: 7px solid #00E5FF;
+    }
+    .theme-frosted .face-back .back-header { color: #FFFFFF; }
+    .theme-frosted .face-back .back-location { color: #00E5FF; }
+    .theme-frosted .face-back .back-tagline { color: #00E5FF; }
+    .theme-frosted .face-back .back-pillars { color: #F1F5F9; }
+    .theme-frosted .face-back .back-qr-box { background: rgba(0,229,255,0.12); border: 1px solid #00E5FF; color: #00E5FF; }
+    .theme-frosted .face-back .back-qr-box .qr-sub { color: #94A3B8; }
+
+    /* THEME 05: MIDNIGHT NAVY & GOLD MONARCH */
+    .theme-monarch .face-front {
+      background: radial-gradient(circle at 30% 20%, #09213B 0%, #041222 60%, #01070F 100%);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      border-left: 7px solid #F59E0B;
+      box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.85), 0 0 25px rgba(245, 158, 11, 0.2);
+    }
+    .theme-monarch .face-front .card-name { color: #FFDF79; text-shadow: 0 2px 10px rgba(0,0,0,0.9); }
+    .theme-monarch .face-front .card-title-text { color: #F59E0B; }
+    .theme-monarch .face-front .card-cred-text { color: #E2E8F0; }
+    .theme-monarch .face-front .card-contact-row { color: #FEF3C7; border-top: 1px solid rgba(245,158,11,0.25); }
+    .theme-monarch .face-front .nfc-badge { background: rgba(245,158,11,0.15); color: #F59E0B; border: 1px solid #F59E0B; }
+
+    .theme-monarch .face-back {
+      background: radial-gradient(circle at 40% 30%, #06182C 0%, #030F1C 70%, #01060D 100%);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      border-right: 7px solid #F59E0B;
+    }
+    .theme-monarch .face-back .back-header { color: #FFDF79; }
+    .theme-monarch .face-back .back-location { color: #F59E0B; }
+    .theme-monarch .face-back .back-tagline { color: #F59E0B; }
+    .theme-monarch .face-back .back-pillars { color: #F8FAFC; }
+    .theme-monarch .face-back .back-qr-box { background: rgba(245,158,11,0.12); border: 1px solid #F59E0B; color: #FFDF79; }
+    .theme-monarch .face-back .back-qr-box .qr-sub { color: #CBD5E1; }
+
+    /* THEME 06: CANADIAN SOVEREIGN LANDMARK EDITION 🍁 */
+    .theme-sovereign .face-front {
+      background: radial-gradient(circle at 40% 25%, #0B2420 0%, #061617 60%, #02090B 100%);
+      border: 1px solid rgba(225, 29, 72, 0.4);
+      border-left: 7px solid #E11D48;
+      box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.85), 0 0 25px rgba(225, 29, 72, 0.25);
+      position: relative;
+    }
+    /* Rocky Mountain Watermark in Relief */
+    .theme-sovereign .face-front::after {
+      content: '';
+      position: absolute;
+      bottom: 10px;
+      right: 15px;
+      width: 140px;
+      height: 70px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50' fill='none' stroke='%2334D399' stroke-width='1.5' stroke-opacity='0.15'%3E%3Cpolygon points='0,50 25,20 40,35 60,10 85,40 100,50'/%3E%3C/svg%3E") no-repeat center/contain;
+      pointer-events: none;
+    }
+    .theme-sovereign .face-front .card-name { color: #FFFFFF; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+    .theme-sovereign .face-front .card-title-text { color: #FB7185; }
+    .theme-sovereign .face-front .card-cred-text { color: #34D399; }
+    .theme-sovereign .face-front .card-contact-row { color: #F8FAFC; border-top: 1px solid rgba(225, 29, 72, 0.25); }
+    .theme-sovereign .face-front .nfc-badge { background: rgba(225,29,72,0.18); color: #FDA4AF; border: 1px solid #E11D48; }
+
+    .theme-sovereign .face-back {
+      background: radial-gradient(circle at 50% 30%, #071A18 0%, #041012 70%, #010608 100%);
+      border: 1px solid rgba(225, 29, 72, 0.4);
+      border-right: 7px solid #E11D48;
+    }
+    .theme-sovereign .face-back .back-header { color: #FFFFFF; }
+    .theme-sovereign .face-back .back-location { color: #FDA4AF; }
+    .theme-sovereign .face-back .back-tagline { color: #FB7185; }
+    .theme-sovereign .face-back .back-pillars { color: #F1F5F9; }
+    .theme-sovereign .face-back .back-qr-box { background: rgba(225,29,72,0.12); border: 1px solid #E11D48; color: #FDA4AF; }
+    .theme-sovereign .face-back .back-qr-box .qr-sub { color: #CBD5E1; }
+
+    /* Card Details Layout */
+    .card-face .card-name {
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 3px;
+    }
+    .card-face .card-title-text {
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .card-face .card-cred-text {
+      font-size: 0.78rem;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      margin-top: 5px;
+    }
+    .card-face .card-contact-row {
+      padding-top: 0.85rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-face .nfc-badge {
+      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 4px;
+    }
+
+    .face-back .back-header {
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+    }
+    .face-back .back-tagline {
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+    .face-back .back-pillars {
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+    .face-back .back-qr-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 14px;
+      border-radius: 8px;
+    }
+
+    /* Live Strategy Rationale Box */
+    .simulator-rationale {
+      max-width: 820px;
+      margin: 2rem auto 0;
+      background: rgba(10, 14, 23, 0.8);
+      border: 1px solid rgba(0, 112, 243, 0.35);
+      border-radius: 12px;
+      padding: 1.25rem 1.75rem;
+      text-align: left;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+    .simulator-rationale h4 {
+      color: #38BDF8;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Flyers Grid */
+    .flyer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+    .flyer-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .flyer-card:hover {
+      border-color: var(--border-bright);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+    }
+    .flyer-img-wrap {
+      background: #000;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+    }
+    .flyer-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .flyer-card:hover .flyer-img-wrap img {
+      transform: scale(1.03);
+    }
+
+    /* LinkedIn Profile Mockup */
+    .linkedin-container {
+      background: #1B1F23;
+      border: 1px solid #30363D;
+      border-radius: 14px;
+      max-width: 960px;
+      margin: 0 auto;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+    .li-banner {
+      height: 190px;
+      background: linear-gradient(135deg, #0A192F 0%, #003B5C 50%, #0070F3 100%);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .li-avatar-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 0 2rem;
+      margin-top: -65px;
+      position: relative;
+    }
+    .li-avatar {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 4px solid #1B1F23;
+      object-fit: cover;
+      background: #0E1624;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    .li-content {
+      padding: 1.5rem 2rem 2.5rem;
+    }
+    .li-name {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .li-headline {
+      font-size: 0.98rem;
+      color: #E2E8F0;
+      margin: 0.4rem 0 0.8rem;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+    .li-sub {
+      font-size: 0.82rem;
+      color: #8B949E;
+    }
+    .li-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1.25rem 0;
+    }
+    .li-badge-item {
+      background: #21262D;
+      border: 1px solid #30363D;
+      color: #C9D1D9;
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+    .li-box {
+      background: #161B22;
+      border: 1px solid #30363D;
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    /* Interactive Calculator */
+    .calc-container {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-bright);
+      border-radius: 16px;
+      padding: 2.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .calc-slider-wrap {
+      margin: 2rem 0;
+    }
+    .slider {
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: #1E293B;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--qtsi-green);
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.6);
+    }
+    .calc-results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .calc-kpi {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .calc-val {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+      font-family: var(--font-mono);
+      margin-bottom: 0.25rem;
+    }
+    .calc-lbl {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Modal */
+    .nfc-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+    .nfc-modal {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-bright);
+      border-radius: 16px;
+      padding: 2.2rem;
+      max-width: 460px;
+      width: 90%;
+      text-align: center;
+      animation: popIn 0.3s ease;
+      box-shadow: 0 20px 60px rgba(0, 112, 243, 0.35);
+    }
+    @keyframes popIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #10B981;
+      color: #fff;
+      padding: 0.8rem 1.4rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      display: none;
+      z-index: 2000;
+      animation: slideUp 0.3s ease;
+    }
+    @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+    @media (max-width: 768px) {
+      .calc-results-grid { grid-template-columns: 1fr; }
+      .brand-meta p { display: none; }
+      header.exec-nav { padding: 0.8rem 1rem; }
+      .card-3d-wrapper { width: 100%; height: 260px; }
+      .flyer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ambient-glow"></div>
+
+  <!-- Executive Header -->
+  <header class="exec-nav">
+    <div class="brand-group">
+      <img src="/public/qtsi-logo.png" alt="QTSI Logo" class="brand-logo" onerror="this.src='/qtsi-logo.png'" />
+      <div class="brand-meta">
+        <h1>Manav Chadha <span>$100K Executive Commercial Hub</span></h1>
+        <p>Quality Training & Technology Services Inc. (QTSI) • Edmonton, AB • store.qtsi.ca</p>
+      </div>
+    </div>
+    <div class="exec-nav-actions">
+      <button class="btn btn-secondary" onclick="triggerNfcModal()">⚡ Test NFC Tap</button>
+      <button class="btn btn-primary" onclick="downloadVCard()">📲 Save vCard (.vcf)</button>
+      <a href="https://qtsi.ca" target="_blank" class="btn btn-secondary">🌐 qtsi.ca ↗</a>
+      <a href="https://store.qtsi.ca" target="_blank" class="btn btn-secondary" style="border-color:var(--qtsi-blue);">🛒 store.qtsi.ca ↗</a>
+    </div>
+  </header>
+
+  <!-- Sticky Tab Bar -->
+  <div class="tab-bar-container">
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab('tab-cards')">💳 6 Business Card Samples (⭐ Concept 03)</button>
+      <button class="tab-btn" onclick="switchTab('tab-flyers')">📑 8 B2B Corporate Flyers</button>
+      <button class="tab-btn" onclick="switchTab('tab-posters')">🖼️ 6 Keynote & Event Posters</button>
+      <button class="tab-btn" onclick="switchTab('tab-linkedin')">💼 LinkedIn Boardroom Profile</button>
+      <button class="tab-btn" onclick="switchTab('tab-calc')">💰 $100K IT Dept Calculator</button>
+      <button class="tab-btn" onclick="switchTab('tab-onboarding')">🚀 White-Glove Onboarding</button>
+    </div>
+  </div>
+
+  <main class="content-wrapper">
+
+    <!-- TAB 1: 6 BUSINESS CARD SAMPLES & FIXED 3D SIMULATOR -->
+    <section id="tab-cards" class="tab-content active">
+      
+      <!-- Executive Briefing Banner -->
+      <div class="playbook-banner">
+        <div>
+          <div class="playbook-title">
+            <span>⭐ Executive Recommendation for Manav:</span> Concept 03 (The Slate All-in-One IT Card)
+          </div>
+          <div class="playbook-desc">
+            Concept 03 establishes QTSI not just as an advisor, but as an indispensable <strong>turnkey operational partner</strong> — bundling Managed IT, direct Hardware Procurement (<code>store.qtsi.ca</code>), and Cyber Defense to capture $3,000–$10,000/month recurring retainers. Review all 6 concepts below and test them dynamically in the 3D simulator.
+          </div>
+        </div>
+        <button class="btn btn-recommend" onclick="load3DCard('slate')">Inspect Concept 03 in 3D ▾</button>
+      </div>
+
+      <div class="section-header">
+        <span class="badge-pill">Executive Stationery Suite</span>
+        <h2 class="section-title">6 Bespoke Business Card Concepts for Manav</h2>
+        <p class="section-desc">Engineered for boardroom meetings, enterprise hardware procurement, and institutional trust. Pick your preferred concept to preview in full 3D simulation.</p>
+      </div>
+
+      <!-- 6 Card Mockup Grid -->
+      <div class="card-grid-3">
+        
+        <!-- Concept 1 -->
+        <div class="showcase-card">
+          <div class="card-image-wrap">
+            <img src="/showcase/card-concept-1-obsidian.jpg" alt="Concept 1: Obsidian Anodized Metal" onerror="this.src='/showcase/card-concept-1-obsidian.jpg'" />
+            <span class="card-badge">Concept 01</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="card-title">The Obsidian Anodized Metal</h3>
+              <p class="card-spec">0.8mm aerospace black metal with diamond-cut emerald beveled edges. Laser-annealed silver typography with metallic blue/green QTSI ribbon logo.</p>
+              <ul class="card-meta-list">
+                <li>Material: Aircraft Aluminum (0.8mm rigid)</li>
+                <li>Finish: Matte Obsidian + Emerald Bevel</li>
+                <li>Tech: Embedded NTAG216 NFC Microchip</li>
+                <li>Best for: Boardrooms & Enterprise C-Suites</li>
+              </ul>
+            </div>
+            <button class="btn btn-secondary" style="width:100%; justify-content:center;" onclick="load3DCard('obsidian')">Test in 3D Simulator ▾</button>
+          </div>
+        </div>
+
+        <!-- Concept 2 -->
+        <div class="showcase-card">
+          <div class="card-image-wrap">
+            <img src="/showcase/card-concept-2-pearl.jpg" alt="Concept 2: Institutional Pearl & Navy" onerror="this.src='/showcase/card-concept-2-pearl.jpg'" />
+            <span class="card-badge">Concept 02</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="card-title">The Institutional Pearl & Navy</h3>
+              <p class="card-spec">32pt triple-thick pure cotton letterpress card with deep QTSI navy edge painting. Blind-debossed official QTSI infinity mark with liquid Spot UV sheen.</p>
+              <ul class="card-meta-list">
+                <li>Material: 600gsm Crane Lettra Cotton</li>
+                <li>Finish: Spot UV Gloss + Painted Navy Edges</li>
+                <li>Style: Classic Wall St. / Big 4 Partner</li>
+                <li>Best for: Legal, healthcare & government audits</li>
+              </ul>
+            </div>
+            <button class="btn btn-secondary" style="width:100%; justify-content:center;" onclick="load3DCard('pearl')">Test in 3D Simulator ▾</button>
+          </div>
+        </div>
+
+        <!-- Concept 3 (⭐ RECOMMENDED) -->
+        <div class="showcase-card recommended-card">
+          <div class="recommended-banner-tag">
+            <span>⭐ RECOMMENDED STRATEGIC CHOICE</span>
+            <span>MAX ROI</span>
+          </div>
+          <div class="card-image-wrap">
+            <img src="/showcase/card-concept-3-slate.jpg" alt="Concept 3: Slate All-in-One IT" onerror="this.src='/showcase/card-concept-3-slate.jpg'" />
+            <span class="card-badge" style="background:#0070F3; color:#fff; font-weight:800;">Concept 03 ⭐</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="card-title" style="color:#fff;">The Slate All-in-One IT & Hardware</h3>
+              <div class="rec-box">
+                <strong>Why Manav Should Pick This Card:</strong><br>
+                1. <strong>Direct Hardware Velocity:</strong> Prominently highlights <code>store.qtsi.ca</code> alongside <code>qtsi.ca</code> to drive immediate device quotes.<br>
+                2. <strong>Positions QTSI as an Essential Utility:</strong> Outsourced IT + Hardware + Cyber Shield locks in $3,000–$10,000/mo retainers.<br>
+                3. <strong>Boardroom Gravitas:</strong> Deep graphite slate with electric blue and emerald foil commands instant authority.
+              </div>
+              <ul class="card-meta-list">
+                <li>Material: High-density composite polymer</li>
+                <li>Messaging: Complete IT Dept + Hardware Shop</li>
+                <li>Dual URL: Highlights qtsi.ca & store.qtsi.ca</li>
+                <li>Best for: SMBs, founders & mid-market CEOs</li>
+              </ul>
+            </div>
+            <button class="btn btn-recommend" style="width:100%; justify-content:center;" onclick="load3DCard('slate')">Test Recommended 3D Card ▾</button>
+          </div>
+        </div>
+
+        <!-- Concept 4 -->
+        <div class="showcase-card">
+          <div class="card-image-wrap">
+            <img src="/showcase/card-concept-4-frosted.jpg" alt="Concept 4: Frosted Translucent Acrylic" onerror="this.src='/showcase/card-concept-4-frosted.jpg'" />
+            <span class="card-badge">Concept 04</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="card-title">The Frosted Translucent Acrylic</h3>
+              <p class="card-spec">Futuristic matte frosted polymer card with luminous emerald/cyan glowing edges. Relieved 3D metallic QTSI ribbon and ultra-crisp white micro-typography.</p>
+              <ul class="card-meta-list">
+                <li>Material: Semi-translucent frosted acrylic</li>
+                <li>Finish: Cyber glow edge & metallic relief</li>
+                <li>Aesthetic: Silicon Valley meets Swiss precision</li>
+                <li>Best for: AI startups, innovators & tech events</li>
+              </ul>
+            </div>
+            <button class="btn btn-secondary" style="width:100%; justify-content:center;" onclick="load3DCard('frosted')">Test in 3D Simulator ▾</button>
+          </div>
+        </div>
+
+        <!-- Concept 5 -->
+        <div class="showcase-card">
+          <div class="card-image-wrap">
+            <img src="/showcase/card-concept-5-monarch.jpg" alt="Concept 5: Midnight Navy & Gold Foil Monarch" onerror="this.src='/showcase/card-concept-5-monarch.jpg'" />
+            <span class="card-badge">Concept 05</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="card-title">The Midnight Navy & Gold Monarch</h3>
+              <p class="card-spec">Deep midnight blue (#001E33) matte suede-touch card with hot-stamped gold foil lettering and metallic emerald green accents. The pinnacle of executive prestige.</p>
+              <ul class="card-meta-list">
+                <li>Material: Soft-touch midnight suede stock</li>
+                <li>Finish: Hot-stamped metallic gold foil</li>
+                <li>Theme: Turnkey IT & Sovereign Cyber Defense</li>
+                <li>Best for: Enterprise RFPs & Private Equity</li>
+              </ul>
+            </div>
+            <button class="btn btn-secondary" style="width:100%; justify-content:center;" onclick="load3DCard('monarch')">Test in 3D Simulator ▾</button>
+          </div>
+        </div>
+
+        <!-- Concept 6 (NEW: CANADIAN SOVEREIGN LANDMARK EDITION) -->
+        <div class="showcase-card">
+          <div class="card-image-wrap">
+            <img src="/showcase/card-concept-6-sovereign.jpg" alt="Concept 6: The Canadian Sovereign Landmark Edition" onerror="this.src='/showcase/card-concept-6-sovereign.jpg'" />
+            <span class="card-badge" style="background:#E11D48; color:#fff;">Concept 06 🇨🇦</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="card-title">The Canadian Sovereign Landmark 🍁</h3>
+              <p class="card-spec">Laser-annealed Canadian granite finish with subtle Canadian Rocky Mountains relief watermark, ruby-red Canadian Maple Leaf crest, and emerald beveled edges.</p>
+              <ul class="card-meta-list">
+                <li>Material: Canadian Granite composite with ruby maple foil</li>
+                <li>Watermark: Canadian Rocky Mountains relief silhouette</li>
+                <li>Sovereignty: 100% Canadian Data Residency (PIPEDA/FOIP)</li>
+                <li>Best for: Public sector, defense, and Alberta enterprises</li>
+              </ul>
+            </div>
+            <button class="btn btn-secondary" style="width:100%; justify-content:center;" onclick="load3DCard('sovereign')">Test in 3D Simulator ▾</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 3D Interactive Card Stage with Ultra-Sharp Contrast -->
+      <div class="interactive-stage" id="cardStage">
+        <span class="badge-pill" style="color:var(--qtsi-green); background:rgba(16,185,129,0.1); border-color:rgba(16,185,129,0.25);">Real-Time 3D Engine</span>
+        <h3 class="stage-title">Interactive 3D Executive Digital Card</h3>
+        <p class="stage-sub">Click the card to flip Front / Back. Move your mouse to test realistic 3D holographic lighting.</p>
+
+        <!-- Style Selector Chips -->
+        <div class="style-picker-bar">
+          <button class="style-chip" data-theme="obsidian" onclick="load3DCard('obsidian')">Concept 01: Obsidian Metal</button>
+          <button class="style-chip" data-theme="pearl" onclick="load3DCard('pearl')">Concept 02: Pearl & Navy</button>
+          <button class="style-chip recommended-chip active" data-theme="slate" onclick="load3DCard('slate')">⭐ Concept 03: Slate All-in-One (Recommended)</button>
+          <button class="style-chip" data-theme="frosted" onclick="load3DCard('frosted')">Concept 04: Frosted Acrylic</button>
+          <button class="style-chip" data-theme="monarch" onclick="load3DCard('monarch')">Concept 05: Gold Monarch</button>
+          <button class="style-chip" data-theme="sovereign" onclick="load3DCard('sovereign')">🇨🇦 Concept 06: Canadian Sovereign 🍁</button>
+        </div>
+
+        <div class="card-3d-wrapper" id="cardWrapper" onclick="toggleFlip()">
+          <!-- Default theme is Slate (Recommended) -->
+          <div class="card-3d-inner theme-slate" id="card3d">
+            
+            <!-- FRONT FACE -->
+            <div class="card-face face-front" id="cardFrontFace">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <img src="/public/qtsi-logo.png" alt="QTSI" style="height:38px; object-fit:contain; filter:drop-shadow(0 2px 8px rgba(0,0,0,0.5));" onerror="this.src='/qtsi-logo.png'">
+                <span class="nfc-badge" id="nfcBadge">⭐ RECOMMENDED CHOICE • NFC</span>
+              </div>
+              
+              <div style="margin: 1.1rem 0;">
+                <h2 class="card-name" id="cardName">MANAV CHADHA</h2>
+                <div class="card-title-text" id="cardTitle">President & CEO • Complete Outsourced IT & Hardware Partner</div>
+                <div class="card-cred-text" id="cardCred">MBA • CISM • Assoc C|CISO • ISO 42001 Lead Auditor • Edmonton AB</div>
+              </div>
+
+              <div class="card-contact-row" id="cardContact">
+                <span>📧 manav@qtsi.ca</span>
+                <span style="font-weight:700;">🌐 qtsi.ca • store.qtsi.ca</span>
+              </div>
+            </div>
+
+            <!-- BACK FACE -->
+            <div class="card-face face-back" id="cardBackFace">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span class="back-header" id="backHeader">QTSI ENTERPRISE IT & ADVISORY</span>
+                <span class="back-location" id="backLocation" style="font-size:0.75rem; font-family:var(--font-mono); font-weight:700;">EDMONTON, ALBERTA</span>
+              </div>
+
+              <div>
+                <div class="back-tagline" id="backTagline">YOUR COMPLETE OUTSOURCED IT & HARDWARE PARTNER</div>
+                <div class="back-pillars" id="backPillars">
+                  • Turnkey Hardware Procurement (<strong>store.qtsi.ca</strong>)<br>
+                  • 24/7 Managed IT Operations & Cloud Migration<br>
+                  • Boardroom Cyber Defense & Fractional vCISO<br>
+                  • Sovereign AI Governance (ISO/IEC 42001)
+                </div>
+              </div>
+
+              <div class="back-qr-box" id="backQrBox">
+                <span class="qr-sub" style="font-size:0.75rem;">Tap phone or scan QR code</span>
+                <span style="font-size:0.75rem; font-weight:700;">qtsi.ca/ai-governance-assessment</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+          <button class="btn btn-secondary" onclick="toggleFlip()">🔄 Flip Card (Front / Back)</button>
+          <button class="btn btn-primary" onclick="triggerNfcModal()">⚡ Test NFC Mobile Tap</button>
+          <button class="btn btn-secondary" onclick="downloadVCard()">📲 Save to Contacts (.vcf)</button>
+        </div>
+
+        <!-- Strategy Box under Simulator -->
+        <div class="simulator-rationale" id="simulatorRationale">
+          <h4>⭐ Why Manav Should Choose Concept 03 (The Slate All-in-One IT Card)</h4>
+          <p>
+            <strong>Monetizes the Full IT Lifecycle:</strong> Rather than being perceived solely as a governance consultant, this card positions Manav as the CEO of a full-scale IT department and commercial hardware supplier (<code>store.qtsi.ca</code>). Every prospective client immediately realizes they can replace their entire fragmented IT overhead with QTSI for a single predictable monthly retainer.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TAB 2: 8 B2B CORPORATE FLYERS -->
+    <section id="tab-flyers" class="tab-content">
+      <div class="section-header">
+        <span class="badge-pill">Turnkey B2B Sales Collateral</span>
+        <h2 class="section-title">8 High-Impact Executive Flyers</h2>
+        <p class="section-desc">Comprehensive suite of client-facing sales one-pagers tailored for SMBs, law firms, healthcare practices, fast-growing scaleups, and enterprise boards. Pitching complete Outsourced IT, Hardware Procurement (<code>store.qtsi.ca</code>), and Cyber Defense.</p>
+      </div>
+
+      <div class="flyer-grid">
+        <!-- Flyer 1 -->
+        <div class="flyer-card">
+          <div class="flyer-img-wrap">
+            <img src="/showcase/flyer-all-in-one-it.jpg" alt="All-in-One IT Department Flyer" onerror="this.src='/showcase/flyer-all-in-one-it.jpg'">
+          </div>
+          <div class="card-body">
+            <div>
+              <span class="badge-pill" style="color:var(--qtsi-green); background:rgba(16,185,129,0.1); border-color:rgba(16,185,129,0.25);">SMB & Growth Focus</span>
+              <h3 class="card-title">All-in-One IT Department & Hardware Partner</h3>
+              <p class="card-spec">Positions QTSI as the single trusted partner for complete IT management, hardware sourcing (<code>store.qtsi.ca</code>), 24/7 helpdesk, and cyber defense.</p>
+            </div>
+            <div style="display:flex; gap:0.5rem; margin-top:1rem;">
+              <a href="/showcase/flyer-all-in-one-it.jpg" target="_blank" class="btn btn-secondary" style="flex:1; justify-content:center;">View Full Res ↗</a>
+              <button class="btn btn-primary" onclick="window.print()" style="flex:1; justify-content:center;">Print / PDF 🖨️</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flyer 2 -->
+        <div class="flyer-card">
+          <div class="flyer-img-wrap">
+            <img src="/showcase/flyer-ai-governance.jpg" alt="Enterprise AI Governance Flyer" onerror="this.src='/showcase/flyer-ai-governance.jpg'">
+          </div>
+          <div class="card-body">
+            <div>
+              <span class="badge-pill">Enterprise Boardroom Focus</span>
+              <h3 class="card-title">Enterprise AI Governance & ISO 42001</h3>
+              <p class="card-spec">Presents Manav Chadha's authority in AI Risk, Model Auditing, and ISO/IEC 42001 Management Systems to protect enterprise valuation.</p>
+            </div>
+            <div style="display:flex; gap:0.5rem; margin-top:1rem;">
+              <a href="/showcase/flyer-ai-governance.jpg" target="_blank" class="btn btn-secondary" style="flex:1; justify-content:center;">View Full Res ↗</a>
+              <button class="btn btn-primary" onclick="window.print()" style="flex:1; justify-content:center;">Print / PDF 🖨️</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flyer 3 -->
+        <div class="flyer-card">
+          <div class="flyer-img-wrap">
+            <img src="/showcase/flyer-hardware-refresh.jpg" alt="Zero-Downtime Hardware Procurement Flyer" onerror="this.src='/showcase/flyer-hardware-refresh.jpg'">
+          </div>
+          <div class="card-body">
+            <div>
+              <span class="badge-pill" style="color:#38BDF8; background:rgba(56,189,248,0.1); border-color:rgba(56,189,248,0.25);">Hardware Procurement</span>
+              <h3 class="card-title">Zero-Downtime Hardware Procurement & Fleet</h3>
+              <p class="card-spec">Promotes <code>store.qtsi.ca</code>: enterprise laptops, server racks, firewalls, zero-touch provisioning, and instant hardware replacement warranties.</p>
+            </div>
+            <div style="display:flex; gap:0.5rem; margin-top:1rem;">
+              <a href="/showcase/flyer-hardware-refresh.jpg" target="_blank" class="btn btn-secondary" style="flex:1; justify-content:center;">View Full Res ↗</a>
+              <button class="btn btn-primary" onclick="window.print()" style="flex:1; justify-content:center;">Print / PDF 🖨️</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flyer 4 -->
+        <div class="flyer-card">
+          <div class="flyer-img-wrap">
+            <img src="/showcase/flyer-vciso-cyber.jpg" alt="Fractional vCISO Flyer" onerror="this.src='/showcase/flyer-vciso-cyber.jpg'">
+          </div>
+          <div class="card-body">
+            <div>
+              <span class="badge-pill" style="color:#A855F7; background:rgba(168,85,247,0.1); border-color:rgba(168,85,247,0.25);">Cyber Risk & vCISO</span>
+              <h3 class="card-title">Board-Level Cyber Defense & Fractional vCISO</h3>
+              <p class="card-spec">Comprehensive Threat & Risk Assessments (TRA), cyber insurance audit qualification, and 24/7 incident command without $450K CISO overhead.</p>
+            </div>
+            <div style="display:flex; gap:0.5rem; margin-top:1rem;">
+              <a href="/showcase/flyer-vciso-cyber.jpg" target="_blank" class="btn btn-secondary" style="flex:1; justify-content:center;">View Full Res ↗</a>
+              <button class="btn btn-primary" onclick="window.print()" style="flex:1; justify-content:center;">Print / PDF 🖨️</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flyer 5 -->
+        <div class="flyer-card">
+          <div class="flyer-img-wrap">
+            <img src="/showcase/flyer-healthcare-it.jpg" alt="Healthcare IT Flyer" onerror="this.src='/showcase/flyer-healthcare-it.jpg'">
+          </div>
+          <div class="card-body">
+            <div>
+              <span class="badge-pill" style="color:#10B981; background:rgba(16,185,129,0.1); border-color:rgba(16,185,129,0.25);">Healthcare Vertical</span>
+              <h3 class="card-title">Healthcare & Clinic Sovereign IT Shield</h3>
+              <p class="card-spec">Zero-downtime medical IT support, encrypted cloud EMRs, clinical workstations (<code>store.qtsi.ca</code>), and full HIA / PIPEDA compliance.</p>
+            </div>
+            <div style="display:flex; gap:0.5rem; margin-top:1rem;">
+              <a href="/showcase/flyer-healthcare-it.jpg" target="_blank" class="btn btn-secondary" style="flex:1; justify-content:center;">View Full Res ↗</a>
+              <button class="btn btn-primary" onclick="window.print()" style="flex:1; justify-content:center;">Print / PDF 🖨️</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flyer 6 -->
+        <div class="flyer-card">
+          <div class="flyer-img-wrap">
+            <img src="/showcase/flyer-legal-accounting.jpg" alt="Legal & Accounting IT Flyer" onerror="this.src='/showcase/flyer-legal-accounting.jpg'">
+          </div>
+          <div class="card-body">
+            <div>
+              <span class="badge-pill" style="color:#F59E0B; background:rgba(245,158,11,0.1); border-color:rgba(245,158,11,0.25);">Professional Services</span>
+              <h3 class="card-title">Sovereign IT Vault for Legal & Accounting</h3>
+              <p class="card-spec">Client privilege defense, secure virtual data rooms, encrypted firm laptops, and 24/7 dedicated IT management for Law & CPA practices.</p>
+            </div>
+            <div style="display:flex; gap:0.5rem; margin-top:1rem;">
+              <a href="/showcase/flyer-legal-accounting.jpg" target="_blank" class="btn btn-secondary" style="flex:1; justify-content:center;">View Full Res ↗</a>
+              <button class="btn btn-primary" onclick="window.print()" style="flex:1; justify-content:center;">Print / PDF 🖨️</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flyer 7 (NEW: SOVEREIGN CLOUD) -->
+        <div class="flyer-card">
+          <div class="flyer-img-wrap">
+            <img src="/showcase/flyer-sovereign-cloud.jpg" alt="100% Canadian Sovereign Cloud & Data Residency Flyer" onerror="this.src='/showcase/flyer-sovereign-cloud.jpg'">
+          </div>
+          <div class="card-body">
+            <div>
+              <span class="badge-pill" style="color:#E11D48; background:rgba(225,29,72,0.1); border-color:rgba(225,29,72,0.25);">Canadian Sovereignty 🍁</span>
+              <h3 class="card-title">100% Canadian Sovereign Cloud & Data Residency</h3>
+              <p class="card-spec">Shielding Alberta & Canadian enterprise data from foreign surveillance (US CLOUD Act). Guaranteed domestic encrypted routing (Edmonton/Calgary) and full PIPEDA, FOIP, HIA compliance.</p>
+            </div>
+            <div style="display:flex; gap:0.5rem; margin-top:1rem;">
+              <a href="/showcase/flyer-sovereign-cloud.jpg" target="_blank" class="btn btn-secondary" style="flex:1; justify-content:center;">View Full Res ↗</a>
+              <button class="btn btn-primary" onclick="window.print()" style="flex:1; justify-content:center;">Print / PDF 🖨️</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flyer 8 (NEW: STARTUP IT-IN-A-BOX) -->
+        <div class="flyer-card">
+          <div class="flyer-img-wrap">
+            <img src="/showcase/flyer-startup-box.jpg" alt="Rapid Scaleup & Startup IT-in-a-Box Flyer" onerror="this.src='/showcase/flyer-startup-box.jpg'">
+          </div>
+          <div class="card-body">
+            <div>
+              <span class="badge-pill" style="color:#0070F3; background:rgba(0,112,243,0.1); border-color:rgba(0,112,243,0.25);">High-Growth Startups</span>
+              <h3 class="card-title">Rapid Scaleup & Startup "IT-in-a-Box"</h3>
+              <p class="card-spec">Day-1 turnkey tech operations: zero-touch enterprise hardware fleet (<code>store.qtsi.ca</code>), Google/M365 hardening, and SOC2/ISO 27001 readiness at predictable $125/user pricing.</p>
+            </div>
+            <div style="display:flex; gap:0.5rem; margin-top:1rem;">
+              <a href="/showcase/flyer-startup-box.jpg" target="_blank" class="btn btn-secondary" style="flex:1; justify-content:center;">View Full Res ↗</a>
+              <button class="btn btn-primary" onclick="window.print()" style="flex:1; justify-content:center;">Print / PDF 🖨️</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TAB 3: 6 KEYNOTE & EVENT POSTERS -->
+    <section id="tab-posters" class="tab-content">
+      <div class="section-header">
+        <span class="badge-pill">Keynote & Event Displays</span>
+        <h2 class="section-title">6 Executive Keynote & Conference Posters</h2>
+        <p class="section-desc">Towering, high-impact display posters for keynote speeches, trade show exhibition booths, corporate offices, and industry conferences.</p>
+      </div>
+
+      <div class="flyer-grid" style="grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));">
+        
+        <!-- Poster 1 -->
+        <div class="flyer-card">
+          <div class="flyer-img-wrap" style="aspect-ratio: 3/4;">
+            <img src="/showcase/poster-ai-mandate.jpg" alt="The AI Mandate Keynote Poster" onerror="this.src='/showcase/poster-ai-mandate.jpg'">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">The AI Mandate: Protecting Enterprise Valuation</h3>
+            <p class="card-spec">Executive Keynote poster featuring Manav Chadha (MBA, CISM, Associate C|CISO) addressing Board Directors and C-suites on governing autonomous AI systems.</p>
+            <div style="display:flex; gap:0.5rem; margin-top:1rem;">
+              <a href="/showcase/poster-ai-mandate.jpg" target="_blank" class="btn btn-secondary" style="flex:1; justify-content:center;">Open Full Res ↗</a>
+              <button class="btn btn-primary" onclick="window.print()" style="flex:1; justify-content:center;">Print Ready 🖨️</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 2 -->
+        <div class="flyer-card">
+          <div class="flyer-img-wrap" style="aspect-ratio: 3/4;">
+            <img src="/showcase/poster-defend-firm.jpg" alt="Defend Your Firm Poster" onerror="this.src='/showcase/poster-defend-firm.jpg'">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Defend Your Firm: The IT & Hardware Shield</h3>
+            <p class="card-spec">Stunning visual display poster showing physical enterprise infrastructure protected under QTSI's cyber defense and turnkey IT operations shield.</p>
+            <div style="display:flex; gap:0.5rem; margin-top:1rem;">
+              <a href="/showcase/poster-defend-firm.jpg" target="_blank" class="btn btn-secondary" style="flex:1; justify-content:center;">Open Full Res ↗</a>
+              <button class="btn btn-primary" onclick="window.print()" style="flex:1; justify-content:center;">Print Ready 🖨️</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 3 -->
+        <div class="flyer-card">
+          <div class="flyer-img-wrap" style="aspect-ratio: 3/4;">
+            <img src="/showcase/poster-1million-minds.jpg" alt="1 Million Minds Poster" onerror="this.src='/showcase/poster-1million-minds.jpg'">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">1 Million Minds: Sovereign Digital Resilience</h3>
+            <p class="card-spec">Inspiring leadership poster spotlighting Manav Chadha's global mission: 500+ tech leaders mentored and educating 1 Million people in cyber safety.</p>
+            <div style="display:flex; gap:0.5rem; margin-top:1rem;">
+              <a href="/showcase/poster-1million-minds.jpg" target="_blank" class="btn btn-secondary" style="flex:1; justify-content:center;">Open Full Res ↗</a>
+              <button class="btn btn-primary" onclick="window.print()" style="flex:1; justify-content:center;">Print Ready 🖨️</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 4 -->
+        <div class="flyer-card">
+          <div class="flyer-img-wrap" style="aspect-ratio: 3/4;">
+            <img src="/showcase/poster-hardware-to-boardroom.jpg" alt="Hardware to Boardroom Poster" onerror="this.src='/showcase/poster-hardware-to-boardroom.jpg'">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">From Hardware to Boardroom</h3>
+            <p class="card-spec">Architectural split poster showcasing QTSI as the single point of accountability: enterprise workstations and servers transitioning into boardroom governance.</p>
+            <div style="display:flex; gap:0.5rem; margin-top:1rem;">
+              <a href="/showcase/poster-hardware-to-boardroom.jpg" target="_blank" class="btn btn-secondary" style="flex:1; justify-content:center;">Open Full Res ↗</a>
+              <button class="btn btn-primary" onclick="window.print()" style="flex:1; justify-content:center;">Print Ready 🖨️</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 5 (NEW: CANADIAN SOVEREIGN CYBER LEADERSHIP) -->
+        <div class="flyer-card">
+          <div class="flyer-img-wrap" style="aspect-ratio: 3/4;">
+            <img src="/showcase/poster-canadian-cyber.jpg" alt="Canadian Sovereign Cyber Leadership Poster" onerror="this.src='/showcase/poster-canadian-cyber.jpg'">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Canadian Sovereign Cyber Leadership 🍁</h3>
+            <p class="card-spec">Towering atrium keynote poster featuring Canadian digital sovereignty, emerald maple leaf shield, and Manav Chadha's real executive credentials.</p>
+            <div style="display:flex; gap:0.5rem; margin-top:1rem;">
+              <a href="/showcase/poster-canadian-cyber.jpg" target="_blank" class="btn btn-secondary" style="flex:1; justify-content:center;">Open Full Res ↗</a>
+              <button class="btn btn-primary" onclick="window.print()" style="flex:1; justify-content:center;">Print Ready 🖨️</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 6 (NEW: THE ZERO-TRUST ENTERPRISE) -->
+        <div class="flyer-card">
+          <div class="flyer-img-wrap" style="aspect-ratio: 3/4;">
+            <img src="/showcase/poster-zero-trust.jpg" alt="The Zero-Trust Enterprise Poster" onerror="this.src='/showcase/poster-zero-trust.jpg'">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">The Zero-Trust Enterprise</h3>
+            <p class="card-spec">Exhibition banner displaying multi-layered zero-trust architectural defense, hardware root-of-trust, and ISO 42001 governance shield.</p>
+            <div style="display:flex; gap:0.5rem; margin-top:1rem;">
+              <a href="/showcase/poster-zero-trust.jpg" target="_blank" class="btn btn-secondary" style="flex:1; justify-content:center;">Open Full Res ↗</a>
+              <button class="btn btn-primary" onclick="window.print()" style="flex:1; justify-content:center;">Print Ready 🖨️</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TAB 4: LINKEDIN BOARDROOM PROFILE SIMULATOR -->
+    <section id="tab-linkedin" class="tab-content">
+      <div class="section-header">
+        <span class="badge-pill">C-Suite Social Proof</span>
+        <h2 class="section-title">LinkedIn Boardroom Authority Simulator</h2>
+        <p class="section-desc">See how Manav's profile will look to prospective clients, enterprise boards, and partner firms. Includes 1-click copy buttons for immediate profile updates.</p>
+      </div>
+
+      <div class="linkedin-container">
+        <!-- Banner -->
+        <div class="li-banner"></div>
+
+        <!-- Avatar & Actions -->
+        <div class="li-avatar-row">
+          <img src="/public/manav-chadha.png" alt="Manav Chadha" class="li-avatar" onerror="this.src='/manav-chadha.png'">
+          <div style="display:flex; gap:0.5rem;">
+            <button class="btn btn-primary" onclick="copyText('headline')">📋 Copy Headline</button>
+            <button class="btn btn-secondary" onclick="copyText('about')">📄 Copy "About" Bio</button>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="li-content">
+          <div class="li-name">
+            Manav Chadha
+            <span style="color:#10B981; font-size:1.1rem;" title="Verified Executive">🛡️</span>
+            <span style="font-size:0.85rem; color:#94A3B8; font-weight:normal;">(He/Him)</span>
+          </div>
+          <div class="li-headline" id="liHeadlineText">
+            President & CEO @ QTSI | Your All-in-One IT Department & Hardware Partner for SMBs | Fractional CIO/vCISO | Sovereign AI Governance (ISO 42001) | Author of The AI Mandate
+          </div>
+          <div class="li-sub">
+            Edmonton, Alberta, Canada • <a href="https://qtsi.ca" target="_blank" style="color:#58A6FF; text-decoration:none;">Quality Training & Technology Services Inc. (QTSI)</a> • 500+ connections
+          </div>
+
+          <!-- Credentials Badges -->
+          <div class="li-badges">
+            <span class="li-badge-item">🎓 IMT Ghaziabad MBA</span>
+            <span class="li-badge-item">🛡️ CISM Certified</span>
+            <span class="li-badge-item">🔒 Associate C|CISO</span>
+            <span class="li-badge-item">⚖️ CCEP Certified</span>
+            <span class="li-badge-item">🤖 ISO/IEC 42001 Lead Auditor</span>
+            <span class="li-badge-item">📋 ISO 27001 Lead Auditor</span>
+            <span class="li-badge-item">🏆 Cybersecurity Award Winner</span>
+            <span class="li-badge-item">📚 2X Author ("The AI Mandate")</span>
+          </div>
+
+          <!-- About Box -->
+          <div class="li-box">
+            <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:0.75rem; color:#fff;">About</h3>
+            <div id="liAboutText" style="font-size:0.9rem; color:#CBD5E1; line-height:1.7; white-space:pre-line;">
+I didn't set out to build a career in technology and cybersecurity—I built it one operational problem at a time over 20+ years across North America, APAC, and EMEA. 
+
+Having sat with technical operators on factory floors and executives in corporate boardrooms, my conviction is simple: technology only matters when it moves the business forward, and risk only gets managed when someone decides to own it.
+
+Through QTSI (Quality Training & Technology Services Inc.), we act as the complete Outsourced IT Department, Hardware Procurement Partner, and Cyber Defense Shield for growing firms, SMBs, and mid-market enterprises.
+
+─── HOW WE EMPOWER GROWING FIRMS ───
+
+1. YOUR COMPLETE OUTSOURCED IT DEPARTMENT
+Why hire an expensive internal IT team when QTSI delivers your turnkey IT operations? From 24/7 helpdesk, cloud migrations, and network engineering to workstations and ongoing maintenance.
+
+2. ENTERPRISE HARDWARE PROCUREMENT (store.qtsi.ca)
+Direct access to business-grade hardware—laptops, secure firewalls, servers, and cloud infrastructure at competitive commercial pricing with zero-touch deployment.
+
+3. SOVEREIGN AI GOVERNANCE (ISO/IEC 42001) & FRACTIONAL vCISO
+Helping C-suites safely deploy AI, prevent algorithmic liability, and manage Threat & Risk Assessments (TRAs) grounded in NIST CSF and ISO 27001.
+
+4. WORKFORCE EMPOWERMENT & DIGITAL LITERACY
+Having mentored over 500 tech professionals and newcomers to Canada, I am driven by a personal mission to educate 1 Million people globally with fundamental digital safety literacy.
+
+🌐 Corporate Hub: https://qtsi.ca
+🛒 Enterprise Hardware Shop: https://store.qtsi.ca
+📊 Free AI Governance Assessment: https://qtsi.ca/ai-governance-assessment
+📩 Direct Inquiries: manav@qtsi.ca
+            </div>
+          </div>
+
+          <!-- Featured Links -->
+          <div style="margin-top:1.5rem;">
+            <h4 style="font-size:0.95rem; font-weight:700; color:#fff; margin-bottom:0.75rem;">Featured Services & Hubs</h4>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:1rem;">
+              <a href="https://qtsi.ca/ai-governance-assessment.html" target="_blank" style="text-decoration:none; background:#22272E; border:1px solid #373E47; border-radius:8px; padding:1rem; color:#fff; display:block;">
+                <span style="font-size:0.75rem; color:#10B981; font-weight:700;">FREE EXECUTIVE TOOL</span>
+                <p style="font-weight:700; font-size:0.9rem; margin-top:4px;">AI Governance Assessment</p>
+                <p style="font-size:0.75rem; color:#94A3B8; margin-top:2px;">Benchmark your organization's ISO 42001 risk in 4 minutes.</p>
+              </a>
+              <a href="https://store.qtsi.ca" target="_blank" style="text-decoration:none; background:#22272E; border:1px solid #373E47; border-radius:8px; padding:1rem; color:#fff; display:block;">
+                <span style="font-size:0.75rem; color:#0070F3; font-weight:700;">ENTERPRISE STORE</span>
+                <p style="font-weight:700; font-size:0.9rem; margin-top:4px;">QTSI Hardware Procurement</p>
+                <p style="font-size:0.75rem; color:#94A3B8; margin-top:2px;">Workstations, servers, firewalls, and cloud licensing.</p>
+              </a>
+              <a href="https://qtsi.ca/executive-advisory.html" target="_blank" style="text-decoration:none; background:#22272E; border:1px solid #373E47; border-radius:8px; padding:1rem; color:#fff; display:block;">
+                <span style="font-size:0.75rem; color:#A855F7; font-weight:700;">EXECUTIVE SERVICE</span>
+                <p style="font-weight:700; font-size:0.9rem; margin-top:4px;">Fractional vCISO Advisory</p>
+                <p style="font-size:0.75rem; color:#94A3B8; margin-top:2px;">Boardroom cyber governance without $450K overhead.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: $100K ENGAGEMENT CALCULATOR -->
+    <section id="tab-calc" class="tab-content">
+      <div class="section-header">
+        <span class="badge-pill">High-Ticket Commercial Engine</span>
+        <h2 class="section-title">$100K All-in-One IT & Hardware Client Calculator</h2>
+        <p class="section-desc">Demonstrates how bundling Managed IT, Hardware Procurement (<code>store.qtsi.ca</code>), and Cyber Defense easily scales a single SMB contract to $60,000 – $150,000+ per year.</p>
+      </div>
+
+      <div class="calc-container">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <h3 style="font-size:1.25rem; font-weight:700;">Client Organization Size (Seats / Workstations)</h3>
+          <span id="seatCountDisplay" style="font-size:1.8rem; font-weight:800; color:var(--qtsi-green); font-family:var(--font-mono);">45 Seats</span>
+        </div>
+
+        <div class="calc-slider-wrap">
+          <input type="range" min="10" max="200" value="45" class="slider" id="seatSlider" oninput="updateCalculator(this.value)">
+          <div style="display:flex; justify-content:space-between; font-size:0.8rem; color:var(--text-muted); margin-top:0.5rem;">
+            <span>10 Seats (Boutique Firm)</span>
+            <span>75 Seats (Mid-Market)</span>
+            <span>200 Seats (Enterprise)</span>
+          </div>
+        </div>
+
+        <div class="calc-results-grid">
+          <div class="calc-kpi">
+            <div class="calc-val" id="monthlyRetainerVal">$5,625 / mo</div>
+            <div class="calc-lbl">Managed IT & Cyber Retainer</div>
+          </div>
+          <div class="calc-kpi">
+            <div class="calc-val" id="hardwareVolumeVal">$38,250</div>
+            <div class="calc-lbl">Hardware & Setup (store.qtsi.ca)</div>
+          </div>
+          <div class="calc-kpi" style="border-color:var(--qtsi-green); background:rgba(16,185,129,0.06);">
+            <div class="calc-val" id="totalContractVal" style="color:var(--qtsi-green);">$105,750</div>
+            <div class="calc-lbl" style="color:#A7F3D0;">Year 1 QTSI Contract Value</div>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem; padding:1.25rem; background:var(--bg-base); border-radius:10px; border:1px solid var(--border-subtle); display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <p style="font-weight:700; font-size:0.95rem;">Client Return on Investment (ROI)</p>
+            <p style="font-size:0.85rem; color:var(--text-secondary);">Client saves over <strong style="color:#fff;" id="clientSavingsVal">$114,250</strong> compared to hiring 2 in-house IT administrators.</p>
+          </div>
+          <a href="https://qtsi.ca/procurement-quote.html" target="_blank" class="btn btn-primary">Create Client Proposal ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: ONBOARDING PROTOCOL -->
+    <section id="tab-onboarding" class="tab-content">
+      <div class="section-header">
+        <span class="badge-pill">Client Experience</span>
+        <h2 class="section-title">White-Glove Enterprise Client Onboarding Protocol</h2>
+        <p class="section-desc">The standardized 4-step onboarding journey that makes an enterprise client feel like they just retained a premier global firm.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
+        <div class="showcase-card" style="padding:1.5rem;">
+          <span style="color:var(--qtsi-blue); font-weight:800; font-family:var(--font-mono);">PHASE 01</span>
+          <h3 style="font-size:1.15rem; margin:0.5rem 0;">Mutual NDA & Agreement</h3>
+          <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5;">Automated PandaDoc / DocuSign digital contract sent within 15 minutes of verbal agreement. 1-click mobile e-signature.</p>
+        </div>
+        <div class="showcase-card" style="padding:1.5rem;">
+          <span style="color:var(--qtsi-green); font-weight:800; font-family:var(--font-mono);">PHASE 02</span>
+          <h3 style="font-size:1.15rem; margin:0.5rem 0;">Private Data Room (Vault)</h3>
+          <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5;">Client receives encrypted credentials to their dedicated workspace at <code>qtsi.ca/executive/</code> with roadmap and inventory checklist.</p>
+        </div>
+        <div class="showcase-card" style="padding:1.5rem;">
+          <span style="color:#A855F7; font-weight:800; font-family:var(--font-mono);">PHASE 03</span>
+          <h3 style="font-size:1.15rem; margin:0.5rem 0;">Executive Welcome Video</h3>
+          <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5;">Manav sends a personalized 3-minute video walking the C-Suite through the first 30 days of IT & cyber stabilization.</p>
+        </div>
+        <div class="showcase-card" style="padding:1.5rem;">
+          <span style="color:#F59E0B; font-weight:800; font-family:var(--font-mono);">PHASE 04</span>
+          <h3 style="font-size:1.15rem; margin:0.5rem 0;">Quarterly Steering Cadence</h3>
+          <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5;">Bi-weekly status emails + monthly executive briefings + quarterly boardroom presentation on security & hardware posture.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Simulated NFC Tap Modal -->
+  <div class="nfc-modal-overlay" id="nfcModal" onclick="closeNfcModal(event)">
+    <div class="nfc-modal" onclick="event.stopPropagation()">
+      <div style="font-size:3rem; margin-bottom:0.5rem;">⚡</div>
+      <span class="badge-pill" style="color:var(--qtsi-green); background:rgba(16,185,129,0.1); border-color:rgba(16,185,129,0.25);">NFC Tag Detected</span>
+      <h3 style="font-size:1.4rem; font-weight:800; margin:0.5rem 0;">Manav Chadha</h3>
+      <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1.5rem;">President & CEO • Quality Training & Technology Services Inc. (QTSI)</p>
+      
+      <div style="background:var(--bg-base); padding:1rem; border-radius:10px; text-align:left; font-size:0.85rem; margin-bottom:1.5rem;">
+        <p><strong>Practice:</strong> Complete Outsourced IT Dept & Hardware Procurement</p>
+        <p><strong>Credentials:</strong> MBA • CISM • Assoc C|CISO • ISO 42001 Lead Auditor</p>
+        <p><strong>Location:</strong> Edmonton, AB, Canada</p>
+        <p><strong>Hardware Shop:</strong> store.qtsi.ca</p>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:0.6rem;">
+        <button class="btn btn-primary" onclick="downloadVCard(); closeNfcModal();">📲 Add to Contacts (vCard)</button>
+        <a href="https://qtsi.ca/ai-governance-assessment.html" target="_blank" class="btn btn-secondary">📊 Open AI Governance Assessment</a>
+        <button class="btn btn-secondary" onclick="closeNfcModal()">Close Preview</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">Copied to clipboard!</div>
+
+  <script>
+    // Auto-resolve image paths for both http server and local file viewing
+    window.addEventListener('DOMContentLoaded', () => {
+      const isHttp = window.location.protocol.startsWith('http');
+      if (isHttp) {
+        document.querySelectorAll('img').forEach(img => {
+          const s = img.getAttribute('src');
+          if (s && s.includes('/public/')) {
+            img.src = s.replace('./public/', '/').replace('/public/', '/');
+          }
+        });
+        const banner = document.querySelector('.li-banner');
+        if (banner) {
+          banner.style.backgroundImage = "url('/showcase/linkedin-banner.jpg')";
+        }
+      }
+
+      // Initialize 3D card tilt effect
+      init3DTilt();
+    });
+
+    // Tab Switching
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      if (event && event.currentTarget) {
+        event.currentTarget.classList.add('active');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Bulletproof 3D Card Flipping
+    let isFlipped = false;
+    function toggleFlip() {
+      const inner = document.getElementById('card3d');
+      isFlipped = !isFlipped;
+      if (isFlipped) {
+        inner.classList.add('flipped');
+        inner.style.transform = 'rotateY(180deg)';
+      } else {
+        inner.classList.remove('flipped');
+        inner.style.transform = 'rotateY(0deg)';
+      }
+    }
+
+    // Dynamic 3D Card Styling Engine (Guaranteed High Contrast & Interactive Scroll)
+    function load3DCard(style) {
+      const card3d = document.getElementById('card3d');
+      const nfcBadge = document.getElementById('nfcBadge');
+      const cardName = document.getElementById('cardName');
+      const cardTitle = document.getElementById('cardTitle');
+      const cardCred = document.getElementById('cardCred');
+      const cardContact = document.getElementById('cardContact');
+      const backHeader = document.getElementById('backHeader');
+      const backLocation = document.getElementById('backLocation');
+      const backTagline = document.getElementById('backTagline');
+      const backPillars = document.getElementById('backPillars');
+      const simRationale = document.getElementById('simulatorRationale');
+
+      // 1. Reset flipped state to front face and apply theme
+      isFlipped = false;
+      card3d.classList.remove('flipped');
+      card3d.style.transform = 'rotateY(0deg)';
+      card3d.className = 'card-3d-inner theme-' + style;
+
+      // 2. Synchronize style picker buttons
+      document.querySelectorAll('.style-chip').forEach(chip => {
+        if (chip.getAttribute('data-theme') === style) {
+          chip.classList.add('active');
+        } else {
+          chip.classList.remove('active');
+        }
+      });
+
+      // 3. Update dynamic text and messaging based on theme
+      if (style === 'obsidian') {
+        nfcBadge.innerText = 'NTAG216 NFC • OBSIDIAN METAL';
+        cardName.innerText = 'MANAV CHADHA';
+        cardTitle.innerText = 'President & CEO • Founder & Lead Executive Advisor';
+        cardCred.innerText = 'MBA • CISM • Assoc C|CISO • ISO 42001 Lead Auditor • Edmonton AB';
+        cardContact.innerHTML = '<span>📧 manav@qtsi.ca</span><span style="font-weight:700;">🌐 qtsi.ca • store.qtsi.ca</span>';
+        backHeader.innerText = 'QTSI ENTERPRISE IT & ADVISORY';
+        backLocation.innerText = 'EDMONTON, AB';
+        backTagline.innerText = 'YOUR COMPLETE OUTSOURCED IT & HARDWARE PARTNER';
+        backPillars.innerHTML = '• Turnkey Hardware Procurement (<strong>store.qtsi.ca</strong>)<br>• 24/7 Managed IT Operations & Cloud Migration<br>• Boardroom Cyber Defense & Fractional vCISO<br>• Sovereign AI Governance (ISO/IEC 42001)';
+        simRationale.innerHTML = '<h4>Concept 01: The Obsidian Anodized Metal</h4><p>Crafted for high-stakes C-Suite encounters. 0.8mm aerospace aluminum commands immediate gravitas, presenting QTSI as an elite institutional player on par with Big 4 advisory and specialized defense integrators.</p>';
+        showToast('Loaded Concept 01: Obsidian Anodized Metal');
+      } else if (style === 'pearl') {
+        nfcBadge.innerText = 'INSTITUTIONAL LETTERPRESS • NFC';
+        cardName.innerText = 'MANAV CHADHA';
+        cardTitle.innerText = 'President & CEO • Lead Executive Advisor';
+        cardCred.innerText = 'IMT Ghaziabad MBA • CISM • Assoc C|CISO • ISO 42001 / 27001 Lead Auditor';
+        cardContact.innerHTML = '<span>📧 manav@qtsi.ca</span><span style="font-weight:700;">🌐 qtsi.ca • store.qtsi.ca</span>';
+        backHeader.innerText = 'QTSI ADVISORY & TECHNOLOGY SERVICES';
+        backLocation.innerText = 'EDMONTON, AB • FOUNDED 2012';
+        backTagline.innerText = 'INSTITUTIONAL IT AUDIT, HARDWARE & CYBER DEFENSE';
+        backPillars.innerHTML = '• Complete Outsourced IT Management & 24/7 SLA<br>• Enterprise Hardware Fleet Procurement (<strong>store.qtsi.ca</strong>)<br>• Comprehensive Threat & Risk Assessment (TRA)<br>• ISO/IEC 42001 AI Risk Management Certification';
+        simRationale.innerHTML = '<h4>Concept 02: Institutional Pearl & Navy (High-Contrast Letterpress)</h4><p>32pt triple-thick pure cotton letterpress card engineered for Big Law, CPA firms, healthcare networks, and regulatory audits. Delivers 15:1 contrast with deep navy typography that projects impeccable pedigree.</p>';
+        showToast('Loaded Concept 02: Institutional Pearl & Navy');
+      } else if (style === 'slate') {
+        nfcBadge.innerText = '⭐ RECOMMENDED CHOICE • NFC';
+        cardName.innerText = 'MANAV CHADHA';
+        cardTitle.innerText = 'President & CEO • Complete Outsourced IT & Hardware Partner';
+        cardCred.innerText = 'MBA • CISM • Assoc C|CISO • ISO 42001 Lead Auditor • Edmonton AB';
+        cardContact.innerHTML = '<span>📧 manav@qtsi.ca</span><span style="font-weight:700;">🌐 qtsi.ca • store.qtsi.ca</span>';
+        backHeader.innerText = 'QTSI ENTERPRISE IT & HARDWARE SHOP';
+        backLocation.innerText = 'EDMONTON, AB';
+        backTagline.innerText = 'ALL-IN-ONE IT • HARDWARE PROCUREMENT • CYBER SHIELD';
+        backPillars.innerHTML = '• Turnkey Hardware Procurement (<strong>store.qtsi.ca</strong>)<br>• 24/7 Managed IT Helpdesk, Cloud & Network Ops<br>• Boardroom Cyber Defense & Fractional vCISO<br>• Sovereign AI Governance (ISO/IEC 42001)';
+        simRationale.innerHTML = '<h4>⭐ Recommended Choice: Concept 03 (The Slate All-in-One IT Card)</h4><p><strong>Maximum Commercial Revenue:</strong> This card unifies high-margin recurring retainers ($3,000–$10,000/mo) with hardware procurement volume at <code>store.qtsi.ca</code>. It immediately communicates the exact value proposition to mid-market CEOs and business owners.</p>';
+        showToast('Loaded Concept 03: Slate All-in-One IT (Recommended)');
+      } else if (style === 'frosted') {
+        nfcBadge.innerText = 'CYBER FROSTED ACRYLIC • NFC';
+        cardName.innerText = 'MANAV CHADHA';
+        cardTitle.innerText = 'President & CEO • Autonomous AI Systems Governance';
+        cardCred.innerText = 'MBA • CISM • Assoc C|CISO • ISO 42001 Lead Auditor • Author of The AI Mandate';
+        cardContact.innerHTML = '<span>📧 manav@qtsi.ca</span><span style="font-weight:700;">🌐 qtsi.ca • store.qtsi.ca</span>';
+        backHeader.innerText = 'QTSI ADVANCED TECHNOLOGY & CYBER';
+        backLocation.innerText = 'EDMONTON • SILICON VALLEY OF ALBERTA';
+        backTagline.innerText = 'NEXT-GEN CLOUD, HARDWARE & AI GOVERNANCE';
+        backPillars.innerHTML = '• Sovereign AI Model Integrity & Safety Audits<br>• Turnkey Hardware Procurement (<strong>store.qtsi.ca</strong>)<br>• Zero-Trust Cloud & Network Infrastructure<br>• 24/7 Rapid Incident Command & vCISO';
+        simRationale.innerHTML = '<h4>Concept 04: Frosted Translucent Acrylic</h4><p>Built for venture tech summits, AI conferences, and innovative scaleup founders. Translucent polymer with glowing cyan edge highlights QTSI as a cutting-edge technological leader.</p>';
+        showToast('Loaded Concept 04: Frosted Translucent Acrylic');
+      } else if (style === 'monarch') {
+        nfcBadge.innerText = '24K GOLD EMBOSSED • NFC';
+        cardName.innerText = 'MANAV CHADHA';
+        cardTitle.innerText = 'President & CEO • Executive Cyber Advisor';
+        cardCred.innerText = 'MBA • CISM • Assoc C|CISO • CCEP • ISO 42001 Lead Auditor';
+        cardContact.innerHTML = '<span>📧 manav@qtsi.ca</span><span style="font-weight:700;">🌐 qtsi.ca • store.qtsi.ca</span>';
+        backHeader.innerText = 'QTSI EXECUTIVE RISK & IT GOVERNANCE';
+        backLocation.innerText = 'EDMONTON, AB';
+        backTagline.innerText = 'PREMIER IT INFRASTRUCTURE & BOARDROOM DEFENSE';
+        backPillars.innerHTML = '• Complete Enterprise IT Operations & SLAs<br>• Dedicated Hardware Fleet Sourcing (<strong>store.qtsi.ca</strong>)<br>• Board-Level Cyber Governance & Advisory<br>• Executive & Workforce Digital Safety Academy';
+        simRationale.innerHTML = '<h4>Concept 05: Midnight Navy & 24K Gold Monarch</h4><p>The pinnacle of bespoke luxury. Designed for Private Equity partners, institutional chairs, and large government RFPs where discretion, permanence, and undisputed authority matter most.</p>';
+        showToast('Loaded Concept 05: Midnight Navy & Gold Monarch');
+      } else if (style === 'sovereign') {
+        nfcBadge.innerText = '🇨🇦 CANADIAN SOVEREIGN • NFC';
+        cardName.innerText = 'MANAV CHADHA';
+        cardTitle.innerText = 'President & CEO • Canadian Sovereign IT & AI Infrastructure';
+        cardCred.innerText = '100% Domestic Data Residency • Edmonton, Alberta • PIPEDA / FOIP / HIA';
+        cardContact.innerHTML = '<span>📧 manav@qtsi.ca</span><span style="font-weight:700;">🍁 Sovereign Canadian Enterprise Shield</span>';
+        backHeader.innerText = '100% CANADIAN SOVEREIGN CLOUD & SHIELD';
+        backLocation.innerText = 'EDMONTON, AB • 🇨🇦';
+        backTagline.innerText = 'DEFENDING CANADIAN ENTERPRISES AGAINST FOREIGN SURVEILLANCE';
+        backPillars.innerHTML = '• Guaranteed 100% Canadian Data Pathing & Storage<br>• Sovereign Hardware Procurement (<strong>store.qtsi.ca</strong>)<br>• Zero US CLOUD Act Jurisdiction or Extraterritorial Access<br>• Domestic AI Model Auditing & Critical Infrastructure Defense';
+        simRationale.innerHTML = '<h4>🇨🇦 Concept 06: The Canadian Sovereign Landmark Edition 🍁</h4><p>Featuring an iconic Canadian Rocky Mountains relief watermark and a ruby-red metallic maple leaf crest. Differentiates QTSI as the proud, patriotic defender of Canadian digital sovereignty, critical infrastructure, and domestic data residency.</p>';
+        showToast('Loaded Concept 06: Canadian Sovereign Landmark 🍁');
+      }
+
+      // 4. Smoothly scroll into view and highlight the stage
+      const stage = document.getElementById('cardStage');
+      if (stage) {
+        stage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        stage.classList.add('stage-highlight-pulse');
+        setTimeout(() => stage.classList.remove('stage-highlight-pulse'), 1200);
+      }
+    }
+
+    // 3D Realistic Mouse Tilt on Card
+    function init3DTilt() {
+      const wrapper = document.getElementById('cardWrapper');
+      const inner = document.getElementById('card3d');
+      if (!wrapper || !inner) return;
+
+      wrapper.addEventListener('mousemove', (e) => {
+        const rect = wrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -12;
+        const rotateY = ((x - centerX) / centerX) * 14;
+
+        if (!isFlipped) {
+          inner.style.transform = 'rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
+        } else {
+          inner.style.transform = 'rotateY(180deg) rotateX(' + rotateX + 'deg) rotateY(' + -rotateY + 'deg)';
+        }
+      });
+
+      wrapper.addEventListener('mouseleave', () => {
+        if (!isFlipped) {
+          inner.style.transform = 'rotateY(0deg)';
+        } else {
+          inner.style.transform = 'rotateY(180deg)';
+        }
+      });
+    }
+
+    // Simulated NFC
+    function triggerNfcModal() {
+      if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
+      document.getElementById('nfcModal').style.display = 'flex';
+    }
+    function closeNfcModal() {
+      document.getElementById('nfcModal').style.display = 'none';
+    }
+
+    // Generate and Download vCard (.vcf)
+    function downloadVCard() {
+      const vcardData = [
+        'BEGIN:VCARD',
+        'VERSION:3.0',
+        'N:Chadha;Manav;;;',
+        'FN:Manav Chadha',
+        'ORG:Quality Training & Technology Services Inc. (QTSI);',
+        'TITLE:President & CEO | Lead Executive Advisor',
+        'EMAIL;type=INTERNET;type=WORK:manav@qtsi.ca',
+        'EMAIL;type=INTERNET;type=HOME:info@qtsi.ca',
+        'URL;type=WORK:https://qtsi.ca',
+        'URL;type=STORE:https://store.qtsi.ca',
+        'URL;type=ASSESSMENT:https://qtsi.ca/ai-governance-assessment',
+        'ADR;type=WORK:;;Edmonton;Alberta;;Canada',
+        'NOTE:All-in-One Outsourced IT Department, Hardware Procurement (store.qtsi.ca) & Sovereign AI Governance (ISO 42001).',
+        'END:VCARD'
+      ].join('\\n');
+
+      const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'Manav_Chadha_QTSI.vcf');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      showToast('vCard downloaded successfully!');
+    }
+
+    // Copy to Clipboard
+    function copyText(type) {
+      let text = '';
+      if (type === 'headline') text = document.getElementById('liHeadlineText').innerText.trim();
+      else if (type === 'about') text = document.getElementById('liAboutText').innerText.trim();
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('Copied ' + type + ' to clipboard!');
+      });
+    }
+
+    // Toast Feedback
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.innerText = msg;
+      t.style.display = 'block';
+      setTimeout(() => { t.style.display = 'none'; }, 3000);
+    }
+
+    // Interactive Calculator
+    function updateCalculator(seats) {
+      document.getElementById('seatCountDisplay').innerText = seats + ' Seats';
+      const monthly = seats * 125; // $125/seat managed IT & security
+      const hardware = seats * 850; // $850 avg workstation / hardware refresh amortized
+      const total = (monthly * 12) + hardware;
+      const savings = (seats * 4200) - total; // savings vs $4200/seat internal IT cost
+
+      document.getElementById('monthlyRetainerVal').innerText = '$' + monthly.toLocaleString() + ' / mo';
+      document.getElementById('hardwareVolumeVal').innerText = '$' + hardware.toLocaleString();
+      document.getElementById('totalContractVal').innerText = '$' + total.toLocaleString();
+      document.getElementById('clientSavingsVal').innerText = '$' + Math.max(savings, 45000).toLocaleString();
+    }
+
+    // Initialize Calculator on load
+    updateCalculator(45);
+  </script>
+</body>
+</html>

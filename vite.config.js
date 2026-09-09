@@ -29,6 +29,7 @@ export default defineConfig({
         execIndex: resolve(__dirname, 'executive/index.html'),
         execLogin: resolve(__dirname, 'executive/login.html'),
         execDiscovery: resolve(__dirname, 'executive/discovery.html'),
+        executiveShowcase: resolve(__dirname, 'executive-showcase.html'),
         vaultAdvisoryCharter: resolve(__dirname, 'executive/vault/advisory-board-charter.html'),
         vaultAdvisoryInvite: resolve(__dirname, 'executive/vault/advisory-board-invitation.html'),
         vaultBoardMeeting: resolve(__dirname, 'executive/vault/board-meeting-template.html'),
